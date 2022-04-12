@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="container">
 
+<!-- testtest -->
   <!-- 用户 openid -->
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}" class="userinfo-opendata">

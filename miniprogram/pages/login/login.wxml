@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+<text>登录页面 未写</text>
+
+<view class="container">
+ <!-- 用户 openid -->
+    <!-- 头像 -->
+    <!-- <block   wx:if="{{canIUseOpenData}}" class="userinfo-opendata">
+      <view class="userinfo-block-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+    </block> -->
+    <!-- 登录 -->
+    <block  >
+      <button 
+        wx:if="{{canIUseGetUserProfile}}" 
+        bindtap="getUserProfile"
+        type="primary"
+        size="default"
+      >用户授权登录<mp-icon icon="sticker" color="white" size="{{26}}"></mp-icon></button>
+    </block>
+
+    <button  type="primary" size="default" bindtap="adminLogin">校医院入口</button>
+</view>

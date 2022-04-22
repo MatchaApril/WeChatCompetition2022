@@ -25,6 +25,7 @@ Page({
         canIUseGetUserProfile: true,
       })
     }
+    
   },
 
   getUserProfile() {
@@ -117,6 +118,21 @@ Page({
       },
       fail: e => {
         console.error(e)
+      }
+    })
+  },
+  // 弹窗
+  handleShowModal(){
+    wx.showModal({
+      title:'获取用户openid',
+      content:'获取用户openid',
+      success:function(res){
+        if(res.confirm){
+          console.log('用户点击确定')
+        }
+        if(res.cancel){
+          console.log('用户点击取消')
+        }
       }
     })
   },

@@ -16,6 +16,8 @@
         bindtap="getUserProfile"
         type="primary"
         size="default"
-      >授权登录<mp-icon icon="sticker" color="white" size="{{26}}"></mp-icon></button>
+      >用户授权登录<mp-icon icon="sticker" color="white" size="{{26}}"></mp-icon></button>
     </block>
+
+    <button  type="primary" size="default" bindtap="adminLogin">校医院入口</button>
 </view>

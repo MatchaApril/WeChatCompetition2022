@@ -111,6 +111,15 @@ Page({
       })
     }
   },
+  //校医院登录
+  adminLogin:function(){
+    //还没写详细登录
+
+    //跳转
+    wx.redirectTo({
+      url: '../adminHome/adminHome',
+    })
+  },
  
   onLoad: function() {
     if (!wx.cloud) {

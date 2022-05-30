@@ -1,0 +1,16 @@
+<view class="fafangji">
+  <view class="aFafangji" wx:for="{{number}}" wx:for-index="idx">
+    <navigator  class="nvgt" style="width: 100%; height: 100%;" url="../machine_resource/machine_resouce?id={{idx}}">
+      <image class="imagefafang"   src="{{product_image[idx]}}"></image>
+      <view class="faXiangqing" >
+        <view class="location">{{product_location[idx]}}</view>
+        <view class="threshold"></view>
+      </view>
+    </navigator>
+  </view>
+
+</view>
+
+<navigator url="../check_user_reserve/check_user_reserve">转移申请页面</navigator>
+
+<navigator url="../add_product/add_product">转移添加页面</navigator>

@@ -1,1 +1,69 @@
 /* pages/add_product/add_product.wxss */
+page{
+  background-color: rgb(219, 218, 218);
+}
+.up{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  align-self: center;
+}
+.line{
+  width: 90%;
+  height: 5rpx;
+  background-color: rgb(204, 176, 176);
+  margin-bottom: 5rpx;
+}
+.upload{
+  width: 96%;
+  height: 500rpx;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+.upload_detail{
+  width: 96%;
+  height: 300rpx;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+.upload_1{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 50rpx;
+  margin-top: 20rpx;
+}
+
+.img{
+  display: flex;
+  width: 96%;
+  height: 200rpx;
+  background-color: #fff;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+}
+
+.anniu{
+  display: flex;
+  height: 150rpx;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}

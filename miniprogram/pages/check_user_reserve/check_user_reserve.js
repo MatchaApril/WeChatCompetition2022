@@ -17,6 +17,8 @@ Page({
     state_approving:'未审批',
     nums_approving:0,
     nums_approved:0,
+    qrid:"",
+    qrsrc:""
 
 
   },
@@ -25,7 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-   
+    console.log("这就是QRRRRRRR",this.data.qrid)
     var DATE = util.formatTime(new Date());
     console.log(DATE)
     console.log(typeof DATE)
@@ -130,11 +132,15 @@ Page({
   })
   },
   jujue:function(e){
+    var DATE = util.formatTime(new Date());
+    
     let that = this
     console.log(e.target.dataset.id)
     db.collection("user_reserve").doc(e.target.dataset.id).update({
       data:{
-        is_approve: 1
+        is_approve: 1,
+        time_approve: DATE
+
       },success:function(res){
         that.onLoad()
       },fail:res=>{
@@ -142,18 +148,31 @@ Page({
       }
     })
   },
+  // 同意之后我就要给数据库返回一个二维码
   tongyi:function(e){
-    
+    var DATE = util.formatTime(new Date());
     let that = this
     console.log(e.target.dataset.id)
     db.collection("user_reserve").doc(e.target.dataset.id).update({
       data:{
         is_approve: 1,
-        status:1
+        status:1,
+        time_approve: DATE
       },success:function(res){
+        // 成功后就应该读取id+_id生成独一无二的二维码
+        db.collection("user_reserve").doc(e.target.dataset.id).get({
+         success:res=>{
+          console.log("这就是QR哦瓜娃",res.data._id + res.data._openid)
+          that.setData({
+            qrid:res.data._id + res.data._openid
+          })
+         }
+        })
+        
+
         that.onLoad()
       },fail:res=>{
-        console.log("当前点击拒绝申请失败咯")
+        console.log("当前点击同意申请失败咯")
       }
     })
 

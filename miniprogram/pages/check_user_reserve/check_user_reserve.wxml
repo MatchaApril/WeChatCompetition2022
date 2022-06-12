@@ -1,5 +1,6 @@
 <!--pages/check_user_reserve/check_user_reserve.wxml-->
 
+<view>这里是后续页面美化的内容，没想好放什么！！</view>
 <!-- 选择栏 -->
 <view class="allxuanze">
 <!-- 审批导航 -->
@@ -81,6 +82,9 @@
     </view>
   </view>
 </view>
+
+<view>下面是canvas</view>
+<canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
 
 
 

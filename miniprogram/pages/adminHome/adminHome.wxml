@@ -1,2 +1,31 @@
 <!--pages/adminHome/adminHome.wxml-->
-<text>pages/adminHome/adminHome.wxml</text>
+<text>此为校医院端的首页</text>
+
+<!-- 此处链接需要更改！！！！！！ -->
+<view class="center_box">
+      <view class="center_1" bindtap="go"  data-go="/pages/messageCreate/messageCreate">
+            <view>处理医疗物品预订</view>
+      </view>
+      <view class="center_1" bindtap="go"  data-go="/pages/messageCreate/messageCreate">
+            <view>发布资讯/安全知识</view>
+      </view>
+</view>
+<view class="center_box">
+      <view class="center_1" bindtap="go"  data-go="/pages/messageCreate/messageCreate">
+            <view>处理反映意见</view>
+      </view>
+      <view class="center_1" bindtap="go"  data-go="/pages/messageCreate/messageCreate">
+            <view>数据管理-医疗物品信息</view>
+      </view>
+</view>
+<view class="center_box">
+      <view class="center_1" bindtap="go"  data-go="/pages/messageCreate/messageCreate">
+            <view>数据管理-资讯信息</view>
+      </view>
+      <view class="center_1" bindtap="go"  data-go="/pages/messageCreate/messageCreate">
+            <view>数据管理-意见信息</view>
+      </view>
+      <view class="center_1" bindtap="go"  data-go="/pages/messageCreate/messageCreate">
+            <view>数据管理-学生信息</view>
+      </view>
+</view>

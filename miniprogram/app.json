@@ -16,16 +16,47 @@
     "pages/login/login",
     "pages/home/home",
     "pages/completeInformation/completeInformation",
-    "pages/adminHome/adminHome"
+    "pages/adminHome/adminHome",
+    "pages/my/my",
+    "pages/message/message",
+    "pages/messageCreate/messageCreate",
+    "pages/messageDetail/messageDetail",
+    "pages/adminLogin/adminLogin"
+
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "校园救急医护共享平台",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#000000",
+    "list": [
+          {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "/images/tabbar/home.png",
+                "selectedIconPath": "/images/tabbar/home_on.png"
+          },
+          {
+                "pagePath": "pages/home/home",
+                "text": "预约",
+                "iconPath": "/images/tabbar/publish.png",
+                "selectedIconPath": "/images/tabbar/publish_on.png"
+          },
+          {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "/images/tabbar/my.png",
+                "selectedIconPath": "/images/tabbar/my_on.png"
+          }
+    ]
+},
+
   "style": "v2",
   "useExtendedLib": {
     "weui":true

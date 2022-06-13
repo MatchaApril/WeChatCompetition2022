@@ -1,0 +1,40 @@
+<wxs src="../../common.wxs" module="morejs" />
+<!--头部<-->
+<view class="navbar">   
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>     <!--此处index和item都是默认值，item代表当前的值，index代表索引0、1、2等-->
+  </view> 
+<!-- search还没写 ！！！！！！！！！！！！ -->
+<view class="top_box">
+      <view class="search_box" bindtap="search">
+            <image class="search_ico" src="/images/search.png"></image>
+            <view class="search_text">搜索</view>
+      </view>
+</view>
+<!-- 列表显示 -->
+<view >
+      <block wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:key="_id">
+              <!-- detail 待定！！！！！！！！！！-->
+                  <view class="list_box" bindtap="detail" data-id="{{item._id}}">
+                        <image lazy-load class="list_poster" src="{{item.image}}"></image>
+                        <view class="list_content">
+                              <view class="list_word">
+                                    <view class="list_title text-cut">{{item.title}}
+                                    </view>
+                                    <view class="list_author text-cut">{{item.type}}
+                                    </view>
+                              </view>
+                              <view class="list_between">
+                                    <view class="list_time">{{item.publish_time}}
+                                    </view>
+                              </view>
+                        </view>
+                  </view>
+            </block>
+      </block>
+</view>
+<!--无内容显示-->
+<view class="nocontent" wx:if="{{list.length==0}}">
+      <image lazy-load src="/images/blank.png"></image>
+      <view class="blank_text">这里空空如也~</view>
+</view>

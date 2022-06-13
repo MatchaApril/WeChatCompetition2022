@@ -1,43 +1,24 @@
-<text>完善用户信息</text>
 
-<view class="page-body">
+<view class="top-bg" style="background-image: url('/images/login_bg.png')"></view>
+
+<view class="contain">
   <form bindsubmit="submit">
-    <view class="page-section">
-      <view class="weui-cells__title">姓名：</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-           <input class="weui-input" auto-focus type="text" name="name" value='{{name}}' placeholder="请输入姓名"/>
-          </view>
-        </view>
+      <view class="card">
+            <view class="title">完善用户信息</view>
+             <view class="contact">
+                  <input bindinput="emInput" auto-focus name="name" value="{{name}}" maxlength="30" placeholder-class="pache" placeholder="请输入您的姓名" />
+            </view>
+            <view class="contact">
+                  <input bindinput="wxInput" auto-focus type="number" name="tel" value='{{tel}}' maxlength="30" placeholder-class="pache" placeholder="输入您的电话号" />
+            </view>
       </view>
-
-      <view class="page-section">
-      <view class="weui-cells__title">电话：</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-           <input class="weui-input" auto-focus type="number" name="tel" value='{{tel}}' maxlength='11' placeholder="请输入11位电话号码"/>
-          </view>
-        </view>
+      <!--底部确认-->
+      <button class="confirm" form-type="submit">确定</button>
+      <view class="shen_title">
+            <image class="about" src="/images/about.png" />使用申明
       </view>
-
-      <!-- <view class="page-section">
-      <view class="weui-cells__title">学校：</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-           <input class="weui-input" auto-focus type="text" name="user" placeholder="请选择学校"/>
-          </view>
-        </view>
-      </view>
-
-      <view class="page-section">
-      <view class="weui-cells__title">学院：</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-           <input class="weui-input" auto-focus type="text" name="user" placeholder="请选择学院"/>
-          </view>
-        </view>
-      </view> -->
-
-      <button form-type="submit">确定</button>
-    </form>
-  </view>
+      <view class="des">1. 在未经您同意及确认之前，本程序不会将您的注册信息用于任何其它商业目的。</view>
+      <view class="des">2. 本程序将对您所提供的资料进行严格的管理及保护，以防止您的个人资料丢失、被盗用或遭篡改。</view>
+      <view class="des">3. 请您放心使用！</view>
+</form>
+    </view>

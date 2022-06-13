@@ -1,0 +1,56 @@
+<view class='head_view1'>
+ <view class="text_view1">
+    <textarea placeholder="请填写标题 (不能为空)" auto-focus maxlength="50" auto-focus="{{false}}" bindinput="getInput1"/>
+    <!-- bindinput是通过getInput1函数获取输入的值， -->
+  </view>
+</view>
+
+<view class='head_view2'>
+ <view class="text_view2">
+    <textarea placeholder="请填写内容 (不能为空)" auto-focus maxlength="250" auto-focus="{{false}}" bindinput="getInput2"/>
+    <!-- bindinput是通过getInput2函数获取输入的值， -->
+  </view>
+</view>
+
+<view class='main_view'>
+ <view class="three_view">
+
+  <view>
+    <view style="font-size:36rpx">
+    添加图片
+    </view>
+    <view class="pictuer_text">
+     图片仅支持6张
+    </view>
+  </view>
+
+  <view class="pictuer_view">
+
+  <block wx:for="{{number}}" wx:if="{{index!=6}}" wx:key="key">
+      <block wx:if="{{index==number-1 }}">
+        <image src="/images/add.png" style="width:160rpx;height:160rpx;border:1rpx solid silver;" bindtap='addImage' ></image>
+      </block>
+      <block wx:else>
+        <image src="{{Filepath[index]}}" style="width:160rpx;height:160rpx;"bindtap='clickimage' data-index="{{index}}" bindlongpress="deleteImage"></image>
+      </block>
+  </block>
+
+
+  </view>
+
+  <view class="type_text">
+  <text>类型：知识普及{{PostType}}（需修改）</text>
+   <!--> <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+     标签   #{{array[index]}}
+    </view>
+  </picker><-->
+  <view style="width:55rpx;height:100%"></view>
+  </view>
+
+ </view>
+</view>
+
+<view class="button_view">
+  <button class="upload_button" bindtap='upload'>发     布</button>
+</view>

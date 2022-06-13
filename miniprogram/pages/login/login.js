@@ -67,8 +67,9 @@ Page({
                   console.log('查找到对应的用户',res.data)
                   //判断有无完善过个人信息
                   if(res.data[0].is_complete==1){
+                    console.log('1111')
                     //跳转
-                  wx.navigateTo({
+                    wx.switchTab({
                      url: '../home/home',
                     })
                   }
@@ -117,7 +118,7 @@ Page({
 
     //跳转
     wx.redirectTo({
-      url: '../adminHome/adminHome',
+      url: '../adminLogin/adminLogin',
     })
   },
  

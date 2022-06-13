@@ -1,2 +1,20 @@
-<!--pages/home/home.wxml-->
-<text>首页</text>
+
+<text>学生端首页</text>
+
+<!-- 此处链接需要更改！！！！！！ -->
+<view class="center_box">
+      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
+            <view>医疗物品预订</view>
+      </view>
+      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
+            <view>资讯/安全知识</view>
+      </view>
+</view>
+<view class="center_box">
+      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
+            <view>反映意见</view>
+      </view>
+      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
+            <view>个人信息管理</view>
+      </view>
+</view>

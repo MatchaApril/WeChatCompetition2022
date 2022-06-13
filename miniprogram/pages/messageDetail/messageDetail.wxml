@@ -1,0 +1,17 @@
+<wxs src="../../common.wxs" module="morejs" />
+<view class="top_contain">
+      <view class="top_img">
+            <image lazy-load src="{{messageInfo.image}}"></image>
+      </view>
+      <view class="title text-cut">{{messageInfo.title}}</view>
+      <view class="author  text-cut">{{publishinfo.bookinfo.author}}</view>
+      <view class="price_box">
+            <view class="now_price">发布时间：{{messageInfo.publish_time}}</view>
+      </view>
+</view>
+<view class="blank"></view>
+
+
+<view class="price_box">
+            <view class="content">{{messageInfo.content}}</view>
+      </view>

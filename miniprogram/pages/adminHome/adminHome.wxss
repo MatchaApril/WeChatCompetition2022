@@ -1,1 +1,23 @@
-/* pages/adminHome/adminHome.wxss */
+.center_box {
+  width: 100%;
+  padding: 20rpx 0;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.center_1 {
+  width: 160rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center_1 view {
+  font-size: 26rpx;
+  padding-top: 20rpx;
+}

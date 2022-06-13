@@ -1,0 +1,5 @@
+<!--pages/adminLogin/adminLogin.wxml-->
+<text>校医院登录界面，输入账号密码？</text>
+
+
+<button  type="primary" size="default" bindtap="adminLogin">校医院端登录</button>

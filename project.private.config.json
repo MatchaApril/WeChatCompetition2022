@@ -29,6 +29,30 @@
           "pathName": "pages/login/login",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/messageCreate/messageCreate",
+          "pathName": "pages/messageCreate/messageCreate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/completeInformation/completeInformation",
+          "pathName": "pages/completeInformation/completeInformation",
+          "query": "",
+          "scene": null
         }
       ]
     }

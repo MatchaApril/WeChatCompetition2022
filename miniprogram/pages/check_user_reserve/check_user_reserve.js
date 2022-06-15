@@ -154,9 +154,10 @@ Page({
                 user_reserve_approved:res.data,
                 nums_approved:res.data.length,
               },()=>{
+                
                 const z = this
                 qrcode = new QRCode('canvas', {
-                  // usingIn: this, // usingIn 如果放到组件里使用需要加这个参数
+                  usingIn: this, // usingIn 如果放到组件里使用需要加这个参数
                   // text: z.data.qrid,
                   // image: '/images/bg.jpg',
                   width: qrcodeWidth,
@@ -165,7 +166,7 @@ Page({
                   colorLight: "white",
                   correctLevel: QRCode.CorrectLevel.H,
                 });
-                console.log("能走到168行吗：：")
+                console.log("能走到169行吗：：")
                 // 生成图片，绘制完成后调用回调
                 if(z.data.qrid !==""){
                   qrcode.makeCode(z.data.qrid, () => {
@@ -181,7 +182,7 @@ Page({
                         }
                         )
                       })
-                    }, 10)
+                    }, 100)
                   })
                 }
                 
@@ -300,7 +301,7 @@ Page({
   tongyi:function(e){
     var DATE = util.formatTime(new Date());
     let that = this
-    console.log(e.target.dataset.id)
+    // console.log(e.target.dataset.id)
       db.collection("user_reserve").doc(e.target.dataset.id).update({
         data:{
           is_approve: 1,
@@ -310,14 +311,14 @@ Page({
           // 成功后就应该读取id+_id生成独一无二的二维码
           db.collection("user_reserve").doc(e.target.dataset.id).get({
            success:res=>{
-            console.log("这就是QR哦瓜娃",res.data._id + res.data._openid)
+            // console.log("这就是QR哦瓜娃",res.data._id + res.data._openid)
             that.setData({
               qrid:res.data._id + res.data._openid,
               user_id:res.data._id,
               user_openid:res.data._openid,
             },()=>{
-              console.log("下一步二维码生成？")
-              console.log("that.data.qrid::",that.data.qrid)
+              // console.log("下一步二维码生成？")
+              // console.log("that.data.qrid::",that.data.qrid)
               that.renderCode(that.data.qrid)
             })
             // setTimeout(()=>{
@@ -336,21 +337,21 @@ Page({
     let that = this
     var timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
-    console.log("当前时间戳为：" + timestamp);
-    console.log("看看再save中是否已经可以访问图片HTTP了",that.data.imgsrc)
+    // console.log("当前时间戳为：" + timestamp);
+    // console.log("看看再save中是否已经可以访问图片HTTP了",that.data.imgsrc)
       wx.cloud.uploadFile({
         cloudPath: '用户申请物品二维码/'+timestamp+'.png',
         
         filePath: that.data.imgsrc, // 文件路径
         success: function(res) {
           // get resource ID
-          console.log("保存图片咯,快看看当前路径对着没babe",res.fileID)
-          console.log("我想知道这个是什么",res.fileID)
+          // console.log("保存图片咯,快看看当前路径对着没babe",res.fileID)
+          // console.log("我想知道这个是什么",res.fileID)
 
           that.setData({
             img:res.fileID,
           },()=>{
-            console.log("save下的update")
+            // console.log("save下的update")
             that.updateQr()
           })
           
@@ -372,7 +373,7 @@ Page({
         qr:that.data.img
       },success:res=>{
         console.log("二维码更改成功")
-        console.log("that.data.img:::",that.data.img)
+        // console.log("that.data.img:::",that.data.img)
       },fail:res=>{
         console.log("图片路径转化为QR失败，check_user_reserve 361行")
       }

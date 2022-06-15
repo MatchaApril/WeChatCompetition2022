@@ -23,7 +23,6 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         console.log(tempFilePaths)
-        
         wx.cloud.uploadFile({
           cloudPath: '医用物品img/'+timestamp+'.png',
           filePath: tempFilePaths[0], // 文件路径

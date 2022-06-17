@@ -34,6 +34,8 @@ Page({
     img:"",
     user_id:"",
     user_openid:"",
+    hiddenmodalput:true,
+    reject:"",
 
 
   },
@@ -285,18 +287,54 @@ Page({
     
     let that = this
     console.log(e.target.dataset.id)
-    db.collection("user_reserve").doc(e.target.dataset.id).update({
-      data:{
-        is_approve: 1,
-        time_approve: DATE
-
-      },success:function(res){
-        that.onLoad()
-      },fail:res=>{
-        console.log("当前点击拒绝申请失败咯")
-      }
+    that.setData({
+      hiddenmodalput: !that.data.hiddenmodalput
     })
   },
+  // 取消拒绝
+  cancel: function(){
+
+    this.setData({
+  
+     hiddenmodalput: true
+  
+    });
+  
+   },
+
+
+  confirm:function(e) {
+    var DATE = util.formatTime(new Date());
+    let that = this
+
+    that.setData({
+      hiddenmodalput: true
+    },()=>{
+      console.log("这就是reject！！",that.data.reject)
+      db.collection("user_reserve").doc(e.target.dataset.id)
+      .update({
+        data:{
+          is_approve: 1,
+          time_approve: DATE,
+          reject:that.data.reject
+        },success:function(res){
+  
+          that.onLoad()
+        },fail:res=>{
+          console.log("当前点击拒绝申请失败咯")
+        }
+      })
+    }
+    )
+  },
+
+  rejectReason:function(e){
+    console.log("input失去焦点的输出内容是什么呢？？？？",e)
+    this.setData({
+      reject: e.detail.value
+      })
+  },
+
   // 同意之后我就要给数据库返回一个二维码
   tongyi:function(e){
     var DATE = util.formatTime(new Date());

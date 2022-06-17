@@ -1,16 +1,62 @@
-<view class="fafangji">
-  <view class="aFafangji" wx:for="{{number}}" wx:for-index="idx">
-    <navigator  class="nvgt" style="width: 100%; height: 100%;" url="../machine_resource/machine_resouce?id={{idx}}">
-      <image class="imagefafang"   src="{{product_image[idx]}}"></image>
-      <view class="faXiangqing" >
-        <view class="location">{{product_location[idx]}}</view>
-        <view class="threshold"></view>
-      </view>
-    </navigator>
-  </view>
 
+<view class="container">
+
+<view class="catalog">
+
+<!-- 左边部分 -->
+  <scroll-view class="nav" scroll-y="true">
+        <view class="item" style="font-weight: bold;">选项</view>
+        <view class="item {{ currentCategory.id == item ? 'active' : ''}}" wx:for="{{number}}"   wx:for-index="idx"  bindtap="switchCate">{{idx+1}}号发放机</view>
+    </scroll-view>
+
+
+
+    <scroll-view class="cate" scroll-y="true">
+    <!-- 右上角 -->
+    <navigator url="url" class="banner">
+            <image class="image" src="cloud://cloud1-9gcef6nu6fc89a19.636c-cloud1-9gcef6nu6fc89a19-1311107941/医用物品img/发放机1.png"></image>
+            <view class="txt">发放机</view>
+    </navigator>
+
+    <view class="hd">
+            <text class="line"></text>
+            <text class="txt">列表</text>
+            <text class="line"></text>
+        </view>
+
+
+<!-- 右下角 -->
+      <!-- <view class="fafangji"> -->
+        <view class="bd">
+        <view class="aFafangji" wx:for="{{number}}" wx:for-index="idx">
+          <navigator  class="nvgt" style="width: 100%; height: 100%;" url="../machine_resource/machine_resouce?id={{idx}}">
+            <image class="imagefafang"   src="{{product_image[idx]}}"></image>
+              <view class="faXiangqing" >
+                <view class="location">{{product_location[idx]}}</view>
+                <view class="threshold"></view>
+              </view>
+          </navigator>
+        </view>
+
+
+
+    </view>
+    </scroll-view>
+
+
+
+
+
+
+
+       
+
+
+  </view>
 </view>
+
 
 <navigator url="../check_user_reserve/check_user_reserve">转移申请页面</navigator>
 
 <navigator url="../add_product/add_product">转移添加页面</navigator>
+<navigator url="../new_machine/new_machine">new_machine</navigator>

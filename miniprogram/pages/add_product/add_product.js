@@ -75,7 +75,8 @@ Page({
           machine_id:e.detail.value.machine_id,
           detail:e.detail.value.detail,
           image:that.data.img,
-          type:parseInt(e.detail.value.type)
+          type:parseInt(e.detail.value.type),
+          deficiency:0
         },success:function(res){
           wx.showToast({
             title: '提交成功',

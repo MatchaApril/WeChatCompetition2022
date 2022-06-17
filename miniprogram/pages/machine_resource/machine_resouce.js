@@ -18,21 +18,38 @@ Page({
   // item_体温计:[],
     // item_口罩:[],
     // location:"",
+
   onLoad(options) {
     let that = this
     console.log("发放机页面传进来的数值为：", options.id)
+    // 更新发放机的所有数量是否有小于阈值的
     db.collection("machine_resource").where({
-      machine_id:options.id
-    }).get({
-      success:res=>{
-        console.log(res.data)
-        that.setData({
-          product:res.data
+      machine_id:options.id,
+      number: _.lt(5)
+    })
+    .update({
+      data:{
+        deficiency: 1
+      },success:res=>{
+        db.collection("machine_resource").where({
+          machine_id:options.id
+        }).get({
+          success:res=>{
+            console.log("内部刷新的",res.data)
+            that.setData({
+              product:res.data
+            })
+          },fail:res=>{
+            console.log("获取发放机资源错误。")
+          }
         })
       },fail:res=>{
-        console.log("获取发放机资源错误。")
+        console.log("当前点击拒绝申请失败咯")
       }
     })
+
+
+    
   },
 
   /**

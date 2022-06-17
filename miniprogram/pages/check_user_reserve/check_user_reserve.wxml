@@ -53,7 +53,14 @@
       <!-- 拒绝，同意申请事件 -->
       <view class="YesNo">
         <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="jujue" data-id="{{item._id}}">拒绝</view>
+
+        <modal hidden="{{hiddenmodalput}}" title="请输入拒绝理由" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{item._id}}">
+        <input type='text' placeholder="请输入内容(15字)" auto-focus maxlength="15" bindblur='rejectReason'></input>
+        </modal>
+
+
         <view  style="font-size: 45rpx; height: 65rpx;font-weight: 800;">|</view>
+
         <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="tongyi" data-id="{{item._id}}">同意</view>
       </view>
     </view>

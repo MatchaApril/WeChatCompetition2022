@@ -1,0 +1,15 @@
+<!--pages/machine_resource/machine_resouce.wxml-->
+<view class="product1">
+  <view class="product2" wx:for="{{product}}" wx:key="_id">
+    <image src="{{item.image}}" class="img"></image>
+    <view class="product3">
+      <text>{{item.name}}</text>
+      <text style="font-size:30rpx;font-size:200">剩余数量：{{item.number}}</text>
+    </view>
+  </view>
+
+
+
+
+
+</view>

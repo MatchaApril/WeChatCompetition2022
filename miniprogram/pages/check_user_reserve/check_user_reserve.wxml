@@ -1,0 +1,156 @@
+<!--pages/check_user_reserve/check_user_reserve.wxml-->
+<view class="cu-card">
+ <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
+  bindtap="geturl" data-url="{{item.url}}" data-upname="{{item.up_name}}" data-name="{{item.title}}"
+  data-num="{{item.num}}" data-code="{{item.code}}" data-openid="{{item._openid}}" data-resourceid="{{item._id}}"
+  wx:for="{{list}}" wx:key="true">
+    <view class="cardTitle">
+      {{item.title}}
+    </view>
+    <view class="cu-list menu-avatar" style="border-radius: 25rpx;">
+      <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{item.up_img}});"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">{{item.up_name}}</view>
+            <view class="text-gray text-sm flex justify-between">
+            {{item.time}}
+              <view class="text-gray text-sm">
+                下载次数：{{item.down_num}}
+              </view>
+            </view>
+         </view>
+        </view>
+      </view>
+ </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view>这里是后续页面美化的内容，没想好放什么！！</view>
+<!-- 选择栏 -->
+<view class="allxuanze">
+<!-- 审批导航 -->
+
+
+  <view class="viewParent">
+    <view class="view1"> 
+      <image style="width: 100%;height: 210rpx;"></image>
+    </view>
+
+    <view class="shenpi">
+
+          <view class="daishenpi">
+            <view class="nums_approving">{{nums_approving}}</view>
+            <view class="xuanze_1" bindtap="xuanze1" data-state="未审批" wx:if="{{state_approving == '未审批'}}" style="color: red;">待审批</view>
+            <view class="xuanze_1" bindtap="xuanze1" data-state="未审批" wx:elif="{{state_approving == '已审批'}}" >待审批</view>
+          </view>
+
+          <view class="yishenpi">
+            <view class="nums_approved">{{nums_approved}}</view>
+            <view class="xuanze_1" bindtap="xuanze1" data-state="已审批" wx:if="{{state_approving == '已审批'}}" style="color: red;">已审批</view>
+
+            <view class="xuanze_1" bindtap="xuanze1" data-state="已审批" wx:elif="{{state_approving == '未审批'}}" >已审批</view>
+          </view>
+
+      
+      
+    </view>
+  </view>
+  
+  <!-- <view>???????????????????????</view>
+  <view>???????????????????????</view>
+  <view>???????????????????????</view> -->
+
+  <!-- 未审批 -->
+  <view wx:if="{{state_approving == '未审批'}}">
+    <view wx:for="{{user_reserve_approving}}" wx:key="_id" class="approving">
+      <!-- 申请信息 -->
+      <view class="shenqingNote">
+        <view class="title">{{item.title}}</view>
+        <view style="font-size: 37rpx; height: 65rpx;">发起人：{{item.name}}({{item.student_number}})</view>
+        <view style="font-size: 37rpx; height: 65rpx;">申报时间：{{item.time_apply}}</view>
+        <view class="zhuangtai">
+          <view style="font-size: 37rpx; height: 65rpx;">状态：</view>
+          <view style="font-size: 37rpx; color: green; height: 65rpx;">办理中</view>
+        </view>
+        <view style="font-size: 37rpx; height: 130rpx;">原因：{{item.reason}}</view>
+      </view>
+      <view class="line1"></view>
+      <!-- 拒绝，同意申请事件 -->
+      <view class="YesNo">
+        <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="jujue" data-id="{{item._id}}">拒绝</view>
+
+        <modal hidden="{{hiddenmodalput}}" title="请输入拒绝理由" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{item._id}}">
+        <input type='text' placeholder="请输入内容(15字)" auto-focus maxlength="15" bindblur='rejectReason'></input>
+        </modal>
+
+
+        <view  style="font-size: 45rpx; height: 65rpx;font-weight: 800;">|</view>
+
+        <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="tongyi" data-id="{{item._id}}">同意</view>
+      </view>
+    </view>
+  </view>
+  <!-- 已审批 -->
+  <view wx:if="{{state_approving == '已审批'}}">
+    <view wx:for="{{user_reserve_approved}}" wx:key="_id" class="approving">
+      <!-- 申请信息 -->
+      <view class="shenqingNote">
+        <view class="title">{{item.title}}</view>
+        <view style="font-size: 37rpx; height: 65rpx;">发起人：{{item.name}}({{item.student_number}})</view>
+        <view style="font-size: 37rpx; height: 65rpx;">申报时间：{{item.time_apply}}</view>
+        <view class="zhuangtai">
+          <view style="font-size: 37rpx; height: 65rpx;">状态：</view>
+          <view wx:if="{{item.status == 0}}" style="font-size: 37rpx; color:red; height: 65rpx;">已拒绝</view>
+          <view wx:if="{{item.status == 1}}" style="font-size: 37rpx; color: green; height: 65rpx;">通过审批</view>
+          <view wx:if="{{item.status == 2}}" style="font-size: 37rpx; color: red; height: 65rpx;">已被领取</view>
+          
+
+          
+        </view>
+        <view style="font-size: 37rpx; height: 130rpx;">原因：{{item.reason}}</view>
+      
+      </view>
+      
+    </view>
+  </view>
+</view>
+
+<view>下面是canvas</view>
+<canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
+
+
+
+
+
+
+
+

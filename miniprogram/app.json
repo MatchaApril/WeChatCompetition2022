@@ -43,7 +43,7 @@
                 "selectedIconPath": "/images/tabbar/home_on.png"
           },
           {
-                "pagePath": "pages/home/home",
+                "pagePath": "pages/index/index",
                 "text": "预约",
                 "iconPath": "/images/tabbar/publish.png",
                 "selectedIconPath": "/images/tabbar/publish_on.png"

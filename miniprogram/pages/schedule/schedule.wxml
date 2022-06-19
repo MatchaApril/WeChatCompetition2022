@@ -1,0 +1,10 @@
+<mp-navigation-bar title="药品预定"></mp-navigation-bar>
+
+
+<form bindsubmit="buttonaddData">
+    <input name="reserve_name" placeholder="请输入名称"></input>
+    
+    <textarea name="reason" placeholder="请输入原因"></textarea>
+    <button type="primary" form-type="submit">提交</button>
+    <button form-type="reset">重置</button>
+</form>

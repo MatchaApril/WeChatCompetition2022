@@ -1,0 +1,23 @@
+<view style="margin-top:50px;font-size:large; font-weight:1000; text-align:center;">订单查询</view>
+<scroll-view class="table" scroll-x="true">
+    <view class="tr">
+        <view class="th_1">用户名</view>
+        <view class="th_2">商品名</view>
+        <view class="th_3">是否审批</view>
+        <view class="th_4">药品状态</view>
+        <view class="th_5">二维码</view>
+    </view>
+    <block wx:for="{{dataObj}}" wx:key="item.name">
+        <view class="tr">
+            <view class="td_1">{{item.name}}</view>
+            <view class="td_2">{{item.reserve_name}}</view>
+            <view class="td_3" wx:if="{{item.is_approve==0}}">未审批</view>
+            <view class="td_3" wx:elif="{{item.is_approve==1}}">已审批</view>
+            <view class="td_4" wx:if="{{item.is_approve==0&&item.status==0}}">请等待审批</view>
+            <view class="td_4" wx:if="{{item.is_approve==1&&item.status==0}}">申请未通过</view>
+            <view class="td_4" wx:if="{{item.is_approve==1&&item.status==1}}">申请已通过</view>
+            <view class="td_4" wx:if="{{item.is_approve==1&&item.status==2}}">药品已发放</view>
+            <image class="td_5" bindlongtap="save" src="{{item.qr}}"></image>
+        </view>
+    </block>
+</scroll-view>

@@ -14,7 +14,9 @@ Page({
       onShow() {
             this.setData({
                   userinfo: app.userinfo
+                  
             })
+            
       },
       go(e) {
             if (e.currentTarget.dataset.status == '1') {

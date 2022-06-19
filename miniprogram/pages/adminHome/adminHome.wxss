@@ -1,4 +1,46 @@
-.center_box {
+page {
+  background-image: url(https://wx3.sinaimg.cn/mw690/006cV2kkgy1gcz9iabu19j30yi22oabf.jpg);
+  background-size: cover;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20% auto;
+}
+
+.boxitem {
+  width: 240rpx;
+  height: 240rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 25rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.boxitem_top {
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxitem_top image {
+  width: 70%;
+  height: 80%;
+}
+
+.boxitem_bottom {
+  font-weight: 400;
+  text-align: center;
+}
+/* .center_box {
   width: 100%;
   padding: 20rpx 0;
   height: 200rpx;
@@ -20,4 +62,4 @@
 .center_1 view {
   font-size: 26rpx;
   padding-top: 20rpx;
-}
+} */

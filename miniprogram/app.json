@@ -1,9 +1,13 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/check_machine_resource/check_machine_resource",
     "pages/check_user_reserve/check_user_reserve",
     "pages/machine_resource/machine_resouce",
     "pages/index/index",
+=======
+    "pages/login/login",
+>>>>>>> 4f1b4ef39396903dc4fd012ef47917380f8ac9f5
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -16,7 +20,7 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/login/login",
+    "pages/index/index",
     "pages/home/home",
     "pages/completeInformation/completeInformation",
     "pages/adminHome/adminHome",
@@ -47,8 +51,13 @@
                 "selectedIconPath": "/images/tabbar/home_on.png"
           },
           {
+<<<<<<< HEAD
                 "pagePath": "pages/index/index",
                 "text": "预约",
+=======
+                "pagePath": "pages/home/home",
+                "text": "预订",
+>>>>>>> 4f1b4ef39396903dc4fd012ef47917380f8ac9f5
                 "iconPath": "/images/tabbar/publish.png",
                 "selectedIconPath": "/images/tabbar/publish_on.png"
           },

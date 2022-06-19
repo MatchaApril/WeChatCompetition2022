@@ -4,6 +4,10 @@ const _=db.command
 
 Page({
   data: {
+    remind: '加载中',
+    angle: 0,
+    year: 2022,
+
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     hasUserInfo: false,
@@ -123,6 +127,11 @@ Page({
   },
  
   onLoad: function() {
+    var that = this;
+    that.setData({
+      year: new Date().getFullYear()
+    });
+
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -137,7 +146,12 @@ Page({
   },
 
   onReady: function () {
-
+    var _this = this;
+    setTimeout(function () {
+      _this.setData({
+        remind: ''
+      });
+    }, 1000);
   },
 
   

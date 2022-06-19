@@ -1,23 +1,25 @@
-<!--pages/login/login.wxml-->
-<text>登录页面 未写</text>
-
 <view class="container">
- <!-- 用户 openid -->
-    <!-- 头像 -->
-    <!-- <block   wx:if="{{canIUseOpenData}}" class="userinfo-opendata">
-      <view class="userinfo-block-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-    </block> -->
-    <!-- 登录 -->
-    <block  >
-      <button 
-        wx:if="{{canIUseGetUserProfile}}" 
-        bindtap="getUserProfile"
-        type="primary"
-        size="default"
-      >用户授权登录<mp-icon icon="sticker" color="white" size="{{26}}"></mp-icon></button>
-    </block>
-
-    <button  type="primary" size="default" bindtap="adminLogin">校医院入口</button>
+	<view class="remind-box" wx:if="{{remind}}">
+	</view>
+	<block wx:else>
+		<!-- <image class="title" src="/images/医护.png"></image> -->
+		<view class="content">
+			<view class="hd" style="transform:rotateZ({{angle}}deg);">
+				<open-data class="logo" type="userAvatarUrl"></open-data>
+				<image class="wave" src="/images/wave.png" mode="aspectFill"></image>
+				<image class="wave wave-bg" src="/images/wave.png" mode="aspectFill"></image>
+			</view>
+			<view class="bd">
+				<image class="smalltitle" src="/images/hh.png"></image>
+				<view class="confirm-btn">
+          <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" >用户授权登录</button>
+          <!-- <button bindtap="adminLogin">校医院端入口</button> -->
+        </view>
+        <view class="confirm-btn2">
+          <button bindtap="adminLogin">校医院端入口</button>
+        </view>
+				<view class="copyright">© {{year}} <text bindtap='goTeam'>校园救急医护共享平台</text> </view>
+			</view>
+		</view>
+	</block>
 </view>

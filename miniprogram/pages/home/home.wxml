@@ -1,20 +1,46 @@
+<!-- 背景图 -->
+<!-- <image class="bg" src="../../images/home-bg.jpg" /> -->
+<!-- 轮播图 -->
+<custom-swiper imgUrls="{{carouselImgUrls}}" /> 
 
-<text>学生端首页</text>
+<!-- <view class='head' >
+    <view class='main_list'>
+      <view class='list1'>
+        <view class='ima' bindtap="go"  data-go="/pages/message/message"><image src='/images/预订.png'></image></view>
+        <view class='tx'><text>医疗物品预订</text></view>
+      </view>
+      <view class='list2'>
+        <view class='ima' bindtap="go"  data-go="/pages/message/message"><image src='/images/资讯.png'></image></view>
+        <view class='tx'><text>资讯/安全知识</text></view>
+      </view>
+    </view>
+</view>
+<view class='mid' >
+    <view class='first'>
+    <view class='main_list'>
+      <view class='list1'>
+        <view class='ima' bindtap="go"  data-go="/pages/message/message"><image src='/images/意见.png'></image></view>
+        <view class='tx'><text>反映意见</text></view>
+      </view>
+      <view class='list2'>
+        <view class='ima' bindtap="go"  data-go="/pages/message/message"><image src='/images/个人信息.png'></image></view>
+        <view class='tx'><text>个人信息管理</text></view>
+      </view>
+    </view>
+  </view>
+</view> -->
+<view class="middle" style="{{anm}}">
+  <view class="middle_box shadow-blur light shadow-blur animation-scale-up bg-{{item.color}}" wx:for="{{functions}}"
+    bindtap="tofunction" data-id="{{index}}" wx:key="true" data-url="{{item.url}}">
+    <view class="box_right">
+      <view class="box_righttop">{{item.name}}</view>
+      <view class="box_rightlow"><text
+          style="font-size:50rpx;margin:3rpx;color:red;">{{item.numbers}}</text>{{item.classifier}}</view>
+    </view>
+    <view class="box_left">
+      <image class="box_img" src="{{item.iconpath}}"></image>
+    </view>
+  </view>
+</view>
 
-<!-- 此处链接需要更改！！！！！！ -->
-<view class="center_box">
-      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
-            <view>医疗物品预订</view>
-      </view>
-      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
-            <view>资讯/安全知识</view>
-      </view>
-</view>
-<view class="center_box">
-      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
-            <view>反映意见</view>
-      </view>
-      <view class="center_1" bindtap="go"  data-go="/pages/message/message">
-            <view>个人信息管理</view>
-      </view>
-</view>
+

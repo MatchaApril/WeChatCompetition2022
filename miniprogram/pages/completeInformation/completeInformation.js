@@ -28,7 +28,7 @@ Page({
         }
       })
       //跳转
-      wx.navigateTo({
+      wx.switchTab({
         url: '../home/home',
       })
     }

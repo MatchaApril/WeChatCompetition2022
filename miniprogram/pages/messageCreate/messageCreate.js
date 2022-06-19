@@ -11,6 +11,7 @@ Page({
     index: 0,
     number: 1,
     PostType:'',
+    PostTypeNum:0,
     telValue1: "",
     telValue2: "",
     UserInfo:''
@@ -92,14 +93,14 @@ Page({
         console.log(app.globalData.openid)
         // const _id=app.globalData.openid
         // const db = wx.cloud.database({ env: 'cloud1-7gxiim6x2a66e335' })
+        
         return db.collection('message').add({ //添加
               data: {
                 title: that.data.telValue1,
                 content: that.data.telValue2,
                 image: res,
                 publish_time: util.formatTime(new Date()),
-                // type: that.data.PostType,   还要修改！！
-                type:1
+                type: that.data.PostTypeNum,   
               }
             }).then(res => {
             wx.hideLoading();
@@ -111,7 +112,7 @@ Page({
                 console.log(res)
                 //要改！！！！
                 wx.navigateTo({
-                  url: '../adminHome/adminHome',
+                  url: '/pages/adminHome/adminHome',
                 })
               }
             })
@@ -129,8 +130,7 @@ Page({
             content: that.data.telValue2,
             image: [],
             publish_time: util.formatTime(new Date()),
-            // type: that.data.PostType,   还要修改！！
-            type:1
+            type: that.data.PostTypeNum,  
           }
         }).then(res => {
           wx.hideLoading();
@@ -141,8 +141,8 @@ Page({
             success: function () {
               console.log(res)
              //要改！！！！
-             wx.switchTab({
-              url: '../adminHome/adminHome',
+             wx.navigateTo({
+              url: '/pages/adminHome/adminHome',
             })
             }
           })
@@ -163,12 +163,23 @@ Page({
 
   onLoad: function (options) {
     var that = this
+    //获取发布的信息类型
     wx.getStorage({
-      key: 'PostType',
+      key: 'messageType',
       success(res) {
-        that.setData({
-          PostType:res.data
+        if(res.data==0){
+          that.setData({
+          PostType:'资讯通知',
+          PostTypeNum:0,
+
         })
+        }
+        else if(res.data==1){
+          that.setData({
+          PostType:'知识普及',
+          PostTypeNum:1,
+        })
+        }
        }
     })
     wx.getStorage({

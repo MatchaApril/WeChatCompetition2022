@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/login/login",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -13,7 +13,7 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/login/login",
+    "pages/index/index",
     "pages/home/home",
     "pages/completeInformation/completeInformation",
     "pages/adminHome/adminHome",
@@ -44,7 +44,7 @@
           },
           {
                 "pagePath": "pages/home/home",
-                "text": "预约",
+                "text": "预订",
                 "iconPath": "/images/tabbar/publish.png",
                 "selectedIconPath": "/images/tabbar/publish_on.png"
           },

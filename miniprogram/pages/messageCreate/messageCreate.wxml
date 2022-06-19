@@ -39,7 +39,7 @@
   </view>
 
   <view class="type_text">
-  <text>类型：知识普及{{PostType}}（需修改）</text>
+  <text>类型：{{PostType}}</text>
    <!--> <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
     <view class="picker">
      标签   #{{array[index]}}

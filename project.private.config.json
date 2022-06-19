@@ -53,6 +53,18 @@
           "pathName": "pages/completeInformation/completeInformation",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/adminHome/adminHome",
+          "pathName": "pages/adminHome/adminHome",
+          "query": "",
+          "scene": null
         }
       ]
     }

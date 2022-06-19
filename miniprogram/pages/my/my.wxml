@@ -1,15 +1,30 @@
+<view class='UCenter-bg'>
+<image class='Userhead' src='{{User_head_url}}' bindtap='uploadhead'></image>
+<view >	
+</view>
+<modal hidden="{{hiddenmodalput}}" title="修改新名字" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm"> 
+<form bindsubmit="formSubmit"> 
+<input type='text' placeholder="请输入新名字" bindinput='ChangeName' name="userName" value='{{Username}}' auto-focus/>
+</form>
+</modal>
+<view class='text-xl text-xl' bindtap="modalinput">
+      <open-data type="userNickName"></open-data>
+</view>
+<image src="https://moyv.top/wechat/images/bg_wave.gif" mode="scaleToFill" class="gif-wave"></image>
+</view>
+
+
 <view class="top_box">
       <view class="top_1">
-            <view wx:if="{{!userinfo}}" class="top_1_1" bindtap="go" data-go="/pages/login/login">这里显示用户信息</view>
-            <view wx:if="{{userinfo}}" class="top_1_1">
+            <view  class="top_1_1">
                   <open-data type="userNickName"></open-data>
             </view>
-             <view class="top_1_2" wx:if="{{userinfo}}" bindtap="go" data-go="/pages/edit/edit" data-status="1">点击修改资料</view>
+             <!-- <view class="top_1_2"  bindtap="go" data-go="/pages/edit/edit" data-status="1">点击修改资料(none)</view> -->
       </view>
       <view class="top_2">
             <view class="avator">
-                  <open-data wx:if="{{userinfo}}" type="userAvatarUrl"></open-data>
-                  <image wx:if="{{!userinfo}}" src="/images/avator.png"></image>
+                  <open-data  type="userAvatarUrl"></open-data>
+                  <image  src="/images/avator.png"></image>
             </view>
       </view>
 </view>

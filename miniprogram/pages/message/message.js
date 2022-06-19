@@ -10,7 +10,7 @@ Page({
   data: {
     list: [],
     nomore: false,
-    navbar: ['通知公告', '知识普及'], 
+    navbar: ['资讯通知', '知识普及'], 
     DataPostArry:[],      //时间数组
   },
 

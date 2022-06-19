@@ -23,14 +23,17 @@ Page({
     let that = this
     console.log("发放机页面传进来的数值为：", options.id)
     // 更新发放机的所有数量是否有小于阈值的
+    // 毅淳，这里你不要update，学生端不能更改数据库的
     db.collection("machine_resource").where({
       machine_id:options.id,
+      // 这里我为了代码方便，阈值全部调整为5了
       number: _.lt(5)
     })
     .update({
       data:{
         deficiency: 1
       },success:res=>{
+        console.log("能走到这一步吗？34行")
         db.collection("machine_resource").where({
           machine_id:options.id
         }).get({

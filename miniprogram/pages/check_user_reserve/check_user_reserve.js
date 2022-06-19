@@ -14,6 +14,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+
+    list: [{
+      title: "审批列表",
+      up_name: "haihong",
+      // upimg是用户头像
+      up_img: "https://wx1.sinaimg.cn/mw1024/006cV2kkly1g45b8b243bj30sa0nqwha.jpg",
+      // 现在时间
+      time: "2022/06/19 ",
+      down_num: "2",
+      bg_color: "45deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 17%",
+    }],
+
+
+
+
+
     // 未审批的申请列表
     user_reserve_approving:[],
     // 已审批的接受列表
@@ -36,6 +52,7 @@ Page({
     user_openid:"",
     hiddenmodalput:true,
     reject:"",
+    nowAdd:""
 
 
   },
@@ -47,6 +64,9 @@ Page({
     console.log("这就是QRRRRRRR",this.data.qrid)
     var DATE = util.formatTime(new Date());
     let that = this
+    // that.setData({
+    //   list.time: DATE
+    // })
     // 未审批的
     db.collection("user_reserve").where({
       is_approve:0
@@ -288,17 +308,29 @@ Page({
     let that = this
     console.log(e.target.dataset.id)
     that.setData({
-      hiddenmodalput: !that.data.hiddenmodalput
+      hiddenmodalput: !that.data.hiddenmodalput,
+      nowAdd:e.currentTarget.dataset.id
     })
   },
   // 取消拒绝
   cancel: function(){
-
-    this.setData({
+    let that = this
+    wx.showToast({
+      title: '取消成功',//提示文字
+      duration:1100,//显示时长
+      mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
+      icon:'success', //图标，支持"success"、"loading"  
+      success:function(){ 
+        that.setData({
   
-     hiddenmodalput: true
-  
-    });
+          hiddenmodalput: true
+       
+         });
+      },//接口调用成功
+      fail: function () { console.log("369行有问题")},  //接口调用失败的回调函数  
+      complete: function () { } //接口调用结束的回调函数  
+   })
+   
   
    },
 
@@ -311,19 +343,33 @@ Page({
       hiddenmodalput: true
     },()=>{
       console.log("这就是reject！！",that.data.reject)
-      db.collection("user_reserve").doc(e.target.dataset.id)
-      .update({
-        data:{
-          is_approve: 1,
-          time_approve: DATE,
-          reject:that.data.reject
-        },success:function(res){
-  
-          that.onLoad()
-        },fail:res=>{
-          console.log("当前点击拒绝申请失败咯")
-        }
-      })
+
+      wx.showToast({
+        title: '取消成功',//提示文字
+        duration:1100,//显示时长
+        mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
+        icon:'success', //图标，支持"success"、"loading"  
+        success:function(){ 
+          db.collection("user_reserve").doc(that.data.nowAdd)
+          .update({
+            data:{
+              is_approve: 1,
+              time_approve: DATE,
+              reject:that.data.reject
+            },success:function(res){
+      
+              that.onLoad()
+            },fail:res=>{
+              console.log("当前点击拒绝申请失败咯")
+            }
+          })                
+        },//接口调用成功
+        fail: function () { console.log("369行有问题")},  //接口调用失败的回调函数  
+        complete: function () { } //接口调用结束的回调函数  
+     })
+
+
+      
     }
     )
   },
@@ -339,7 +385,7 @@ Page({
   tongyi:function(e){
     var DATE = util.formatTime(new Date());
     let that = this
-    // console.log(e.target.dataset.id)
+    console.log("e.target.dataset.id",e.target.dataset.id)
       db.collection("user_reserve").doc(e.target.dataset.id).update({
         data:{
           is_approve: 1,
@@ -357,7 +403,21 @@ Page({
             },()=>{
               // console.log("下一步二维码生成？")
               // console.log("that.data.qrid::",that.data.qrid)
-              that.renderCode(that.data.qrid)
+              // 
+              wx.showToast({
+                title: '审批成功',//提示文字
+                duration:1100,//显示时长
+                mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
+                icon:'success', //图标，支持"success"、"loading"  
+                success:function(){ 
+                  that.renderCode(that.data.qrid)
+                },//接口调用成功
+                fail: function () { console.log("369行有问题")},  //接口调用失败的回调函数  
+                complete: function () { } //接口调用结束的回调函数  
+             })
+
+
+
             })
             // setTimeout(()=>{
             //   console.log("showshowshow")
@@ -366,6 +426,7 @@ Page({
            }
           })          
         },fail:res=>{
+          console.log("失败的DATE",DATE)
           console.log("当前点击同意申请失败咯")
         }
       })

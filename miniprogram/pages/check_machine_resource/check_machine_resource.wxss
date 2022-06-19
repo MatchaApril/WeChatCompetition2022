@@ -15,16 +15,14 @@
   border-top: 1px solid #fafafa;
 }
 
-.catalog .bd {
-  height: auto;
-  width: 100%;
-  overflow: hidden;
-}
+
 
 .catalog .nav {
+  padding-left: 3rpx;
   width: 162rpx;
   height: 100%;
 }
+
 .catalog .nav .item {
   text-align: center;
   line-height: 90rpx;
@@ -33,7 +31,18 @@
   color: #333;
   font-size: 28rpx;
   border-left: 6rpx solid #fff;
+  margin-top: 50rpx;
 }
+
+.catalog .nav .item .line_1 {
+  width: 100%;
+  height: 1px;
+  margin-top: 10rpx;
+  background: #d9d9d9;
+}
+
+
+
 
 .catalog .nav .item.active {
   color: #ab2b2b;
@@ -44,7 +53,7 @@
 .catalog .cate {
   border-left: 1px solid #fafafa;
   flex: 1;
-  height: 100%;
+  height: 1500rpx;
   padding: 0 30rpx 0 30rpx;
 }
 
@@ -133,3 +142,140 @@
   height: 1px;
   background: #d9d9d9;
 }
+
+
+
+
+
+
+/* 右下角物品展示 */
+
+.catalog .bd {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.catalog .bd .product1{
+  /* width: 100%; */
+
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap:wrap;
+  align-self: center;
+  align-items: center;
+  background-color: snow;
+  
+}
+.catalog .bd .product1 .product2{
+  width: 100%;
+  height: 200rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid silver;
+  border-radius: 20rpx;
+  margin-bottom: 10rpx;
+  /* align-items: center;
+  justify-content: space-between; */
+
+}
+.catalog .bd .product1 .product2 .img{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  width: 30%;
+  height: 90%;
+  border-radius: 20rpx;
+}
+
+.catalog .bd .product1 .product2 .product3{
+  display: flex;
+  flex-direction: column;
+  /* border: 1rpx solid silver; */
+  width: 70%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  justify-content: space-between;
+  align-items: center;
+  /* border-radius: 20rpx; */
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+
+}
+
+
+.catalog .bd .product1 .product3 .product3_1{
+    display: flex;
+    flex-direction: row;
+
+    /* border: 1rpx solid silver; */
+    width: 80%;
+    /* margin-top: 10rpx; */
+    padding-top: 20rpx;
+    margin-bottom: 10rpx;
+    justify-content: space-between;
+    align-items: center;
+    /* border-radius: 20rpx; */
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+  
+}
+
+.catalog .bd .product1 .product3 .product3_2{
+  display: flex;
+  flex-direction: row-reverse;
+  /* border: 1rpx solid silver; */
+  width: 80%;
+  height: 70rpx;
+  /* margin-top: 10rpx;
+  margin-bottom: 10rpx; */
+  justify-content: space-between;
+  align-items: center;
+  
+  /* border-radius: 20rpx; */
+  /* padding-left: 20rpx;
+  padding-right: 20rpx; */
+
+}
+
+
+.catalog .bd .product1 .product3 .product3_2 .btn{
+  width: 35%;
+  height: 45rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 20rpx;
+  
+
+}
+
+.addHover{
+  
+  position: relative;
+  top: 3rpx;
+  left: 3rpx;
+  box-shadow:0px 0px 8px rgba(0, 0, 0, .1) inset; 
+}
+
+
+
+.catalog .bd .product1 .product3 .product3_2 .img3_2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40rpx;
+  width: 15%;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  margin-left: 20rpx;
+  
+
+
+}
+/* .catalog .bd .product1 .product3 .product3_2 .addProduct {
+  
+} */

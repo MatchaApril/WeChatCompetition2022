@@ -42,7 +42,7 @@
   
   <view class="upload_detail">
     <view>商品简介</view>
-    <textarea placeholder="请输入物品简介(80字)" maxlength="80" name="detail"></textarea>
+    <textarea placeholder="请输入物品简介(40字)" maxlength="40" name="detail"></textarea>
   </view>
 
 

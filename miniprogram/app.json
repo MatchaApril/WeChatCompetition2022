@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/add_product/add_product",
     "pages/check_machine_resource/check_machine_resource",
     "pages/check_user_reserve/check_user_reserve",
     "pages/machine_resource/machine_resouce",
@@ -16,7 +17,7 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/add_product/add_product",
+    
     "pages/new_machine/new_machine"
     
   ],

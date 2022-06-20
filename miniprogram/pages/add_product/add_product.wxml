@@ -1,6 +1,49 @@
-<!--pages/add_product/add_product.wxml-->
+<view class="cu-card">
+ <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
+  bindtap="geturl" data-url="{{item.url}}" data-upname="{{item.up_name}}" data-name="{{item.title}}"
+  data-num="{{item.num}}" data-code="{{item.code}}" data-openid="{{item._openid}}" data-resourceid="{{item._id}}"
+  wx:for="{{list}}" wx:key="true">
+
+  <!-- 增加商品 -->
+  <view class="cardTitle">
+   {{item.title}}
+  </view>
+
+  <view class="cu-list menu-avatar" style="border-radius: 25rpx;">
+
+  <!-- 整体头像加名字 -->
+   <view class="cu-item">
+   <!-- 头像 -->
+    <view class="cu-avatar round lg" style="background-image:url({{item.up_img}});"></view>
+
+    <!-- 头像右边部分 -->
+    <view class="content flex-sub">
+    <!-- 人名字 -->
+     <view class="text-grey">{{item.up_name}}</view>
+
+     <!-- 左边时间，右边下载次数 -->
+     <view class="text-gray text-sm flex justify-between">
+      {{item.time}}
+
+      
+      <view class="text-gray text-sm">
+       下载次数：{{item.down_num}}
+      </view>
+
+     </view>
+    </view>
+   </view>
+  </view>
+ </view>
+</view>
+
+
+<view style="background-color: #55efc4;">hhhhh</view>
+<view style="background-color: #81ecec;">hhhhh</view>
+<view style="background-color: #ff7675;">hhhhh</view>
+
 <form bindsubmit="submit">
-  <view style="justify-content: center;height: 150rpx;">这里该在放个什么的，但是还没想好，占位占位</view>
+  <!-- <view style="justify-content: center;height: 150rpx;">这里该在放个什么的，但是还没想好，占位占位</view> -->
   <view class="up">
     <view class="upload">
       <view class="upload_1">
@@ -42,7 +85,7 @@
   
   <view class="upload_detail">
     <view>商品简介</view>
-    <textarea placeholder="请输入物品简介(40字)" maxlength="40" name="detail"></textarea>
+    <textarea placeholder="请输入物品简介(限30字)" maxlength="30" name="detail"></textarea>
   </view>
 
 
@@ -60,3 +103,8 @@
 </view>
 <button form-type="submit" type="primary" >提交</button>
 </form>
+
+
+<navigator url="../check_machine_resource/check_machine_resource"> GOGOGOGOO</navigator>
+<navigator url="../machine_resource/machine_resouce"> 色卡生成器</navigator>
+

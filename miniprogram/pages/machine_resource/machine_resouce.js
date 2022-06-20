@@ -7,101 +7,96 @@ Page({
    * 页面的初始数据
    */
   data: {
-    product:[],
-    num:0
-
-  },  
+    color: ''
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  // item_体温计:[],
-    // item_口罩:[],
-    // location:"",
-
-  onLoad(options) {
-    let that = this
-    console.log("发放机页面传进来的数值为：", options.id)
-    // 更新发放机的所有数量是否有小于阈值的
-    // 毅淳，这里你不要update，学生端不能更改数据库的
-    db.collection("machine_resource").where({
-      machine_id:options.id,
-      // 这里我为了代码方便，阈值全部调整为5了
-      number: _.lt(5)
-    })
-    .update({
-      data:{
-        deficiency: 1
-      },success:res=>{
-        console.log("能走到这一步吗？34行")
-        db.collection("machine_resource").where({
-          machine_id:options.id
-        }).get({
-          success:res=>{
-            console.log("内部刷新的",res.data)
-            that.setData({
-              product:res.data
-            })
-          },fail:res=>{
-            console.log("获取发放机资源错误。")
-          }
-        })
-      },fail:res=>{
-        console.log("当前点击拒绝申请失败咯")
-      }
-    })
-
-
-    
+  onLoad: function (options) {
+    value: ''
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
-
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage() {
+  onShareAppMessage: function () {
 
   },
-  
+  shengcheng: function () {
+    var k = this
+    // 自定义颜色
+    // var color = ['#FFC796', '#fdcb6e', '#00cec9', '#9EFBD3', '#57E9F2', '#45D4FB', '#FF6B95']
+    // 自定义比例
+    var id_1 = Math.ceil(Math.random() * 360);
+    var id_2 = Math.ceil(Math.random() * 10);
+    var id_3 = Math.ceil(Math.random() * 60) + 20;
+    var id_4 = Math.ceil(Math.random() * 80);
+    var randomx = Math.floor(Math.random() * 10);
+    // console.log(randomx)
+    // 0 1 2
+    // 3 4 5
+    // 0 6 5
+    
+    // 生成随机色 
+    //  var temp=id_1+"deg,"+"#55efc4"+" "+id_2+"%,"+"#81ecec"+" "+id_3+"%,"+"#ff7675"+" "+id_4+"%"
+     var temp=id_1+"deg,"+"#FFC796"+" "+id_2+"%,"+"#FF6B95"+" "+id_3+"%,"+"#6c5ce7"+" "+id_4+"%"
+    // var temp=id_1+"deg,"+"#6c5ce7"+" "+id_2+"%,"+"#6c5ce7"+" "+id_3+"%,"+"#74b9ff"+" "+id_4+"%"
+    // var temp = id_1 + "deg," + "#ee4866" + " " + id_2 + "%," + "#eea2a4" + " " + id_3 + "%," + "#eea2a4" + " " + id_4 + "%"
+    k.setData({
+      color: temp
+    })
+  },
+  copy() {
+    var k = this
+    wx.setClipboardData({
+      data: k.data.color,
+      success: res => {
+        wx.showToast({
+          title: '已复制',
+          duration: 2000,
+        })
+      }
+    })
+  },
 })

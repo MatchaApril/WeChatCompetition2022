@@ -6,8 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    list: [{
+      title: "增加商品",
+      up_name: "haihong",
+      up_img: "https://wx1.sinaimg.cn/mw1024/006cV2kkly1g45b8b243bj30sa0nqwha.jpg",
+      time: "2021/10/01",
+      down_num: "2",
+      bg_color: "122deg,#55efc4 10%,#81ecec 63%,#ff7675 10%",
+    }],
     fenlei:[],
     img:'',
+    
+    color: ''
   },
   // 上传图片
   upload_img:function(){
@@ -98,11 +108,14 @@ Page({
 
 
 
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    value:''
   },
 
   /**

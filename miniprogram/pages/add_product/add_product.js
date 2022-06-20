@@ -24,12 +24,14 @@ Page({
         const tempFilePaths = res.tempFilePaths
         console.log(tempFilePaths)
         wx.cloud.uploadFile({
+          // 这个是云存储的路径
           cloudPath: '医用物品img/'+timestamp+'.png',
           filePath: tempFilePaths[0], // 文件路径
           success: function(res) {
             // get resource ID
             console.log(res.fileID)
             that.setData({
+              // 前面this.data里放一个  img:'',
               img:that.data.img.concat(res.fileID)
             })
           },

@@ -3,6 +3,11 @@
 
 <view class="catalog">
 
+
+  <modal hidden="{{hiddenmodalput}}" title="增加商品数量" confirm-text="增加" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{idx}}">
+              <input type='text' placeholder="请输入数量(不小于5)" auto-focus maxlength="2" bindblur='addNum'>
+              </input>
+  </modal>
 <!-- 左边部分 -->
   <scroll-view class="nav" scroll-y="true">
         <view class="item" style="font-weight: bold;">发放机</view>
@@ -44,10 +49,7 @@
         <view class="product1">
         <view class="product2" wx:for="{{product}}" wx:key="_id" wx:for-index="idx">
           
-          <modal hidden="{{hiddenmodalput}}" title="请输入增加数量" confirm-text="增加" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{idx}}">
-              <input type='text' placeholder="数量(不小于5)" auto-focus maxlength="5" bindblur='addNum'>
-              </input>
-          </modal>
+          
 
           <image src="{{item.image}}" class="img"></image>
           <view class="product3">
@@ -97,7 +99,4 @@
 </view>
 
 
-<navigator url="../check_user_reserve/check_user_reserve">转移申请页面</navigator>
-
 <navigator url="../add_product/add_product">转移添加页面</navigator>
-<navigator url="../new_machine/new_machine">new_machine</navigator>

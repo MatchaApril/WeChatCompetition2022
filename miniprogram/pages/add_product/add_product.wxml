@@ -1,0 +1,129 @@
+<view class="cu-card">
+ <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
+  bindtap="geturl" data-url="{{item.url}}" data-upname="{{item.up_name}}" data-name="{{item.title}}"
+  data-num="{{item.num}}" data-code="{{item.code}}" data-openid="{{item._openid}}" data-resourceid="{{item._id}}"
+  wx:for="{{list}}" wx:key="true">
+
+  <!-- 增加商品 -->
+  <view class="cardTitle">
+   {{item.title}}
+  </view>
+
+  <view class="cu-list menu-avatar" style="border-radius: 25rpx;">
+
+  <!-- 整体头像加名字 -->
+   <view class="cu-item">
+   <!-- 头像 -->
+    <view class="cu-avatar round lg" style="background-image:url({{item.up_img}});"></view>
+
+    <!-- 头像右边部分 -->
+    <view class="content flex-sub">
+    <!-- 人名字 -->
+     <view class="text-grey">{{item.up_name}}</view>
+
+     <!-- 左边时间，右边下载次数 -->
+     <view class="text-gray text-sm flex justify-between">
+      {{item.time}}
+
+      
+      <!-- <view class="text-gray text-sm">
+       下载次数：{{item.down_num}}
+      </view> -->
+
+     </view>
+    </view>
+   </view>
+  </view>
+ </view>
+</view>
+
+
+
+
+
+<form bindsubmit="submit" bindreset="reset">
+  <!-- up是整个上传整体 -->
+  <view class="up">
+
+  <!-- name等 -->
+    <view class="upload">
+
+      <view class="upload_1">
+        <view>物品名称：</view>
+        <input placeholder="请输入物品名称" name="name"> </input>
+      </view>
+
+      <view class="line"></view>
+
+      <view class="upload_1">
+        <view>物品数量：</view>
+        <input placeholder="输入物品数量(不小于5)" name="number"> </input>
+      </view>
+
+      <view class="line"></view>
+
+
+      <view class="upload_1">
+        <view>发放机ID：</view>
+        <input placeholder="要放入的发放机ID" name="machine_id"> </input>
+      </view>
+
+      <view class="line"></view>
+
+      <view class="upload_1">
+        <view >物品价格：</view>
+        <input placeholder="请输入该物品单价" name="price"> </input>
+      </view>
+      <view class="line"></view>
+
+      <view class="upload_1" style="margin-bottom: 20rpx;">
+        <radio-group name="type" style="padding-top: 10rpx;">
+          <radio value="0">基础医疗物品</radio>
+          <radio value="1" style="margin-left: 50rpx;">学生申请物品</radio>
+        </radio-group>
+      </view>
+    </view>
+  
+  
+  <!-- 商品简介 -->
+  <view class="upload_detail">
+    <view class="detail_title">商品简介</view>
+    <textarea placeholder="请输入物品简介(限30字)" maxlength="30" name="detail"></textarea>
+  </view>
+
+
+
+<!-- 上传图片 -->
+  <view class="img">
+
+    <!-- 选择图片 -->
+    <view class="anniu">
+      <button size="mini" type="primary" bindtap="upload_img" >添加图片</button>
+    </view>
+
+    <image src="{{img}}" style="width:100rpx;height:100rpx"></image>
+    <!-- 删除图片 -->
+    <!-- <button size="mini" type="warn" plain="true" bindtap="delete" data-id="{{index}}" data-src="{{img}}">删除图片</button> -->
+
+    
+    
+  </view>
+
+
+
+
+
+
+<!-- 提交 重置按钮 -->
+<view class="btn-area">
+  <button style="margin: 30rpx 0" form-type="submit" type="primary" >提交</button>
+  <button  style="margin: 30rpx 0" formType="reset" type="default" data-src="{{img}}" >重置</button>
+</view>
+
+</view>
+
+</form>
+
+
+
+

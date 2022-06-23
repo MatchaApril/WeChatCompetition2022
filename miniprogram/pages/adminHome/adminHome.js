@@ -8,7 +8,7 @@ Page({
     functions: [{
         icon: "/images/订单.png",
         name: "药品预订",
-        url: "/pages/messageCreate/messageCreate"
+        url: "/pages/check_user_reserve/check_user_reserve"
       },
       {
         icon: "/images/上传.png",
@@ -30,7 +30,7 @@ Page({
       {
         icon: "/images/纱布.png",
         name: "----数据管理----医疗物品信息",
-        url: "/pages/messageCreate/messageCreate"
+        url: "/pages/check_machine_resource/check_machine_resource"
       },
       {
         icon: "/images/清单.png",

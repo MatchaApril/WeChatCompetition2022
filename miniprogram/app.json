@@ -1,6 +1,10 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/check_machine_resource/check_machine_resource",
+    "pages/check_user_reserve/check_user_reserve",
+    "pages/machine_resource/machine_resouce",
+    "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -13,7 +17,6 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/index/index",
     "pages/home/home",
     "pages/completeInformation/completeInformation",
     "pages/adminHome/adminHome",
@@ -21,8 +24,9 @@
     "pages/message/message",
     "pages/messageCreate/messageCreate",
     "pages/messageDetail/messageDetail",
-    "pages/adminLogin/adminLogin"
-
+    "pages/adminLogin/adminLogin",
+    "pages/add_product/add_product",
+    "pages/new_machine/new_machine"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -43,8 +47,9 @@
                 "selectedIconPath": "/images/tabbar/home_on.png"
           },
           {
-                "pagePath": "pages/home/home",
-                "text": "预订",
+                "pagePath": "pages/index/index",
+                "text": "预约",
+
                 "iconPath": "/images/tabbar/publish.png",
                 "selectedIconPath": "/images/tabbar/publish_on.png"
           },

@@ -40,12 +40,26 @@ search(n) {
   wx.showLoading({
         title: '加载中',
   })
-  db.collection('message').where({
-        content: db.RegExp({
-              regexp: '.*' + key + '.*',
-              options: 'i',
-        })
-  }).orderBy('publish_time', 'desc').limit(20).get({
+  db.collection('message').where(
+        _.or([{
+              //对标题和内容进行多字段搜索
+            content: db.RegExp({
+               regexp: '.*' + key+'.*', //key为用户输入的内容
+               options: 'i',
+             })
+           },
+           {  
+             title: db.RegExp({
+               regexp: '.*' + key+'.*',
+               options: 'i',
+             })
+           }
+         ])
+      //   content: db.RegExp({
+      //         regexp: '.*' + key + '.*',
+      //         options: 'i',
+      //   })
+  ).orderBy('publish_time', 'desc').limit(20).get({
         success(e) {
               console.log(e)
               wx.hideLoading();

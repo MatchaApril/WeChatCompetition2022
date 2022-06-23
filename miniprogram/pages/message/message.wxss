@@ -30,6 +30,17 @@ page {
   letter-spacing: 2rpx;
   color: rgb(167, 167, 167);
 }
+.top_contain {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  background: #fbbd08;
+  height: 106rpx;
+  align-items: center;
+}
+
 .list_box {
   width: 100%;
   display: flex;

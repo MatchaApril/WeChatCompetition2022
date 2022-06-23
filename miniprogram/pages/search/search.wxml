@@ -35,7 +35,7 @@
                               <view class="list_word">
                                     <view class="list_title text-cut">{{item.title}}
                                     </view>
-                                    <view class="list_author text-cut">{{item.type}}
+                                    <view class="list_author text-cut">{{item.content}}
                                     </view>
                               </view>
                               <view class="list_between">
@@ -44,6 +44,7 @@
                               </view>
                         </view>
                   </view>
+                  
             </block>
       </block>
 </view>

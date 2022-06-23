@@ -3,6 +3,7 @@
 <view class="navbar">   
     <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>     <!--此处index和item都是默认值，item代表当前的值，index代表索引0、1、2等-->
   </view> 
+<!-- search还没写 ！！！！！！！！！！！！ -->
 <view class="top_box">
       <view class="search_box" bindtap="search">
             <image class="search_ico" src="/images/search.png"></image>
@@ -19,7 +20,7 @@
                               <view class="list_word">
                                     <view class="list_title text-cut">{{item.title}}
                                     </view>
-                                    <view class="list_author text-cut">{{item.content}}
+                                    <view class="list_author text-cut">{{item.type}}
                                     </view>
                               </view>
                               <view class="list_between">
@@ -28,7 +29,6 @@
                               </view>
                         </view>
                   </view>
-                  
             </block>
       </block>
 </view>

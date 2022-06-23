@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    character:0,
   },
 
   /**
@@ -17,6 +17,18 @@ Page({
     this.data.id = e.scene;
     //获取详细信息
     this.getDetail(e.scene);
+    //获取角色
+    let that = this;
+    wx.getStorage({
+      key: 'character',
+      success(res) {
+        console.log(res)
+        that.setData({
+            character:res.data,
+        })
+        console.log(that.data.character)
+       }
+    })
   },
  //获取详细信息
  getDetail(e) {
@@ -29,8 +41,34 @@ Page({
         }
   })
 },
-
-
+//删除资讯
+deleteMessage: function () {
+  let that = this
+    wx.showModal({
+      title: '提示',
+      content: '请问是否删除？',     
+      success: function (res) {
+        if (res.confirm) {
+          console.log(that.data.messageInfo._id)//事件的id
+          wx.cloud.callFunction({
+            name: 'delMessage',
+            data: {
+              youid: that.data.messageInfo._id,
+            },
+            success: function (res) {
+              console.log(res);
+              wx.navigateTo({
+                url: "/pages/adminMessage/adminMessage"
+              })
+            },
+            error:function(res){
+console.log(res);
+            }
+          })
+        }
+      }
+    })
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,17 +1,27 @@
 <wxs src="../../common.wxs" module="morejs" />
 <view class="top_contain">
       <view class="top_img">
-            <image lazy-load src="{{messageInfo.image}}"></image>
+            <image lazy-load class="list_poster" src="{{messageInfo.image}}"></image>
       </view>
-      <view class="title text-cut">{{messageInfo.title}}</view>
-      <view class="author  text-cut">{{publishinfo.bookinfo.author}}</view>
+      <text class="title1">{{messageInfo.title}}</text>
       <view class="price_box">
             <view class="now_price">发布时间：{{messageInfo.publish_time}}</view>
       </view>
 </view>
-<view class="blank"></view>
+
+
+<view class="tool">
+    <view class="circle-img" wx:if="{{character==0}}">
+      <image src="/images/喜欢.png"></image>
+      <image class="share-img" src="/images/火热.png"></image>
+    </view>
+    <view class="circle-img" wx:if="{{character==1}}">
+      <image class="share-img" src="/images/删除.png" bindtap="deleteMessage"></image>
+    </view>
+    <view class="horizon"></view>
+  </view>
 
 
 <view class="price_box">
-            <view class="content">{{messageInfo.content}}</view>
+            <view class="content" style="text-indent:2em;">{{messageInfo.content}}</view>
       </view>

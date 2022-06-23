@@ -35,7 +35,7 @@ Page({
       {
         icon: "/images/清单.png",
         name: "----数据管理----资讯信息",
-        url: "/pages/messageCreate/messageCreate"
+        url: "/pages/message/message"
       },
       {
         icon: "/images/信息管理.png",

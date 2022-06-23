@@ -71,6 +71,11 @@ Page({
       }
     })
   },
+
+
+
+
+  
   //上传
   upload: function () {
     var that = this
@@ -80,13 +85,16 @@ Page({
       })
       if (that.data.number > 1)
       {
+        console.log('正在上传图片',that.data)
         Promise.all(that.data.Filepath.map((value) => {
+          console.log('异步处理',value)
         return wx.cloud.uploadFile({
-          cloudPath: Date.now() + parseInt(Math.random() * 100) + value.match(/\.[^.]+?$/)[0],
-          filePath: value,
+          cloudPath: Date.now() + parseInt(Math.random() * 100) + value.match(/\.[^.]+?$/)[0],  // 上传至云端的路径
+          filePath: value,    // 小程序临时文件路径
         })
       })).then(res => {
         return res.map((res) => {
+          console.log('res.fileID:',res.fileID)
           return res.fileID
         });
       }).then(res => {

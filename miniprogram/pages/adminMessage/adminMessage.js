@@ -70,11 +70,8 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //搜索
   search:function(){
-      wx.navigateTo({
-            url: '/pages/search/search',
-          })
+
   },
   
 //获取通知公告的列表

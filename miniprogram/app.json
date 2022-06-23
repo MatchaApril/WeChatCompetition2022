@@ -25,6 +25,8 @@
     "pages/messageCreate/messageCreate",
     "pages/messageDetail/messageDetail",
     "pages/adminLogin/adminLogin",
+    "pages/search/search",
+    "pages/personalInformation/personalInformation",
     "pages/add_product/add_product",
     "pages/new_machine/new_machine"
   ],

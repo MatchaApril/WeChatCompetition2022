@@ -1,0 +1,50 @@
+<view class="top_contain">
+      <view class="search_box">
+            <image src="/images/search.png"></image>
+            <input bindinput="keyInput" bindconfirm="search" placeholder="输入您感兴趣的内容"></input>
+      </view>
+      <view class="search" bindtap="search">搜索</view>
+</view>
+
+
+<view class="contain">
+      <!-- 没有结果 -->
+      <block wx:if="{{list.length==0}}">
+            <block wx:if="{{blank}}">
+                  <view class="a">
+                        <image src="/images/search.png"></image>
+                        <view>搜索结果</view>
+                  </view>
+                  <!--无内容显示-->
+                  <view class="nocontent">
+                        <image src="/images/blank.png"></image>
+                        <view class="blank_text">暂无{{key}}相关资讯/安全知识哟~</view>
+                  </view>
+            </block>
+      </block>
+      <!-- 有结果 -->
+      <block wx:if="{{list.length>0}}">
+            <view class="a">
+                  <image src="/images/search.png"></image>
+                  <view>搜索结果</view>
+            </view>
+            <block wx:for="{{list}}" wx:key="_id">
+                  <view class="list_box" bindtap="detail" data-id="{{item._id}}">
+                        <image lazy-load class="list_poster" src="{{item.image}}"></image>
+                        <view class="list_content">
+                              <view class="list_word">
+                                    <view class="list_title text-cut">{{item.title}}
+                                    </view>
+                                    <view class="list_author text-cut">{{item.content}}
+                                    </view>
+                              </view>
+                              <view class="list_between">
+                                    <view class="list_time">{{item.publish_time}}
+                                    </view>
+                              </view>
+                        </view>
+                  </view>
+                  
+            </block>
+      </block>
+</view>

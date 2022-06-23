@@ -3,7 +3,7 @@ page {
 }
 .top_box {
   width: 100%;
-  background: rgb(152, 211, 235);
+  background: #fbbd08;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,17 +30,6 @@ page {
   letter-spacing: 2rpx;
   color: rgb(167, 167, 167);
 }
-.top_contain {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20rpx 30rpx;
-  box-sizing: border-box;
-  background: #fbbd08;
-  height: 106rpx;
-  align-items: center;
-}
-
 .list_box {
   width: 100%;
   display: flex;
@@ -56,7 +45,7 @@ page {
   box-sizing: border-box;
 }
 .list_poster {
-  width: 260rpx;
+  width: 230rpx;
   height: 230rpx;
 }
 .list_content {
@@ -65,7 +54,7 @@ page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 14rpx;
+  padding: 0 10rpx;
   box-sizing: border-box;
 }
 .list_title {
@@ -73,25 +62,14 @@ page {
   font-size: 35rpx;
   letter-spacing: 3rpx;
   line-height: 45rpx;
-  font-weight: bold;
-  
 }
 .list_author {
-  padding-top: 15rpx;
-  /* padding-bottom: 20rpx; */
+  padding-top: 10rpx;
   width: 100%;
-  font-size: 23rpx;
+  font-size: 27rpx;
   letter-spacing: 3rpx;
   line-height: 40rpx;
   color: rgb(129, 129, 129);
-  -webkit-line-clamp: 3;
-
- text-overflow:ellipsis;
- z-index: -1;
- display: -webkit-box;
- word-break: break-all;
- -webkit-box-orient: vertical;
- overflow: hidden;
 }
 .list_between {
   width: 100%;
@@ -108,7 +86,7 @@ page {
 .list_time {
   font-size: 28rpx;
   letter-spacing: 2rpx;
-  color: rgb(100, 99, 99);
+  color: rgb(129, 129, 129);
 }
 .nocontent {
   width: 100%;

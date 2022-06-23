@@ -19,6 +19,11 @@ Page({
     openid:''    //用户的openid
   },
   getUserProfile() {
+    //用户登录
+    wx.setStorage({
+      data: 0,
+      key: 'character',
+    })
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
@@ -118,8 +123,11 @@ Page({
   },
   //校医院登录
   adminLogin:function(){
-    //还没写详细登录
-
+    //角色：校医院
+    wx.setStorage({
+      data: 1,
+      key: 'character',
+    })
     //跳转
     wx.redirectTo({
       url: '../adminLogin/adminLogin',

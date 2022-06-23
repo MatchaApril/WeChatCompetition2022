@@ -1,6 +1,6 @@
 /* pages/add_product/add_product.wxss */
 page{
-  background-color: rgb(219, 218, 218);
+  background-color: rgb(245,245,245);
 }
 
 .cu-card {
@@ -198,6 +198,7 @@ cu-list+.cu-list {
   flex-direction: column;
   width: 100%;
   align-items: center;
+  justify-content: center;
   align-self: center;
 }
 .line{
@@ -206,9 +207,10 @@ cu-list+.cu-list {
   background-color: rgb(204, 176, 176);
   margin-bottom: 5rpx;
 }
+
 .upload{
   width: 96%;
-  height: 500rpx;
+  /* height: 500rpx; */
   display: flex;
   align-items: center;
   align-self: center;
@@ -217,6 +219,13 @@ cu-list+.cu-list {
   background-color: #fff;
   border-radius: 15rpx;
   margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.detail_title{
+  margin:20rpx 10rpx;
+  font-weight: bold;
+  font-size: 34rpx;
 }
 .upload_detail{
   width: 96%;
@@ -241,13 +250,13 @@ cu-list+.cu-list {
 .img{
   display: flex;
   width: 96%;
-  height: 200rpx;
+  height: 100rpx;
   background-color: #fff;
   align-self: center;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   border-radius: 20rpx;
-  margin-top: 10rpx;
+  margin-top: 5rpx;
 }
 
 .anniu{
@@ -255,6 +264,13 @@ cu-list+.cu-list {
   height: 150rpx;
   flex-direction: row;
   align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-area{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

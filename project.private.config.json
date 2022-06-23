@@ -8,6 +8,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "卡片用户",
+          "pathName": "pages/check_user_reserve/check_user_reserve",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "增加物品",
+          "pathName": "pages/add_product/add_product",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

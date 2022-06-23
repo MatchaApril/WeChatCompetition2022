@@ -116,7 +116,12 @@ cu-list+.cu-list {
 
 .cardTitle {
   color: #fff;
-  padding: 90rpx 60rpx;
+  height: 150rpx;
+  
+  padding-top: 70rpx;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+  /* padding: 90rpx 60rpx; */
   font-size: 40rpx;
   font-weight: 450;
   transform: skew(-10deg, 0deg);
@@ -131,6 +136,7 @@ cu-list+.cu-list {
   height: 6rpx;
   border-radius: 20rpx;
   background-color: #fff;
+  
   display: block;
   top: 60rpx;
   left: 50rpx;
@@ -197,16 +203,16 @@ cu-list+.cu-list {
 .viewParent{
   position: relative;
   z-index: 1;
-  border: 1px solid rgb(255,255,255); 
-  margin-top: 50rpx;
-  height: 160rpx;
+  
+  /* margin-top: 5rpx; */
+  height: 100rpx;
   border-radius: 20rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   align-self: center;
-  margin-bottom: 50rpx;
+  margin-bottom: 60rpx;
 }
 .view1{
   position: absolute;
@@ -218,11 +224,10 @@ cu-list+.cu-list {
 .shenpi{
   position: absolute;
   z-index: 3;
-  border: 1px solid rgb(255,255,255); 
-  margin-top: 50rpx;
   width: 90%;
   height: 160rpx;
   border-radius: 40rpx;
+  
   background-color: rgb(255,255,255);
   display: flex;
   flex-direction: row;
@@ -239,8 +244,8 @@ cu-list+.cu-list {
   display: flex;
   flex-direction: column;
   margin-left: 20%;
-  width: 21%;
-  font-size: 40rpx;
+  width: 40%;
+  font-size: 32rpx;
   font-size: x-large;
 }
 
@@ -258,8 +263,8 @@ cu-list+.cu-list {
   display: flex;
   flex-direction: column;
   margin-right: 20%;
-  width: 21%;
-  font-size: 40rpx;
+  width: 40%;
+  font-size: 32rpx;
   font-size: x-large;
 }
 .nums_approved{
@@ -274,7 +279,12 @@ cu-list+.cu-list {
 
 
 .xuanze_1{
-  
+  width: 100%;
+  display: flex;   
+
+  justify-content: center;   
+
+  align-items: center; 
 }
 .xuanze_2{
   

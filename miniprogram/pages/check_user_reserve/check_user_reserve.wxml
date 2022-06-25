@@ -146,8 +146,9 @@
   </view>
 </view>
 
-<view>下面是canvas</view>
-<canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
+<view  style='width:0px;height:0px;overflow:hidden;'>
+  <canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
+</view>
 
 
 

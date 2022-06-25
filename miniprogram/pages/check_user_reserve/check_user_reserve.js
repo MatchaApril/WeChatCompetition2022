@@ -179,7 +179,7 @@ Page({
                 
                 const z = this
                 qrcode = new QRCode('canvas', {
-                  usingIn: this, // usingIn 如果放到组件里使用需要加这个参数
+                  // usingIn: this, // usingIn 如果放到组件里使用需要加这个参数
                   // text: z.data.qrid,
                   // image: '/images/bg.jpg',
                   width: qrcodeWidth,
@@ -188,10 +188,10 @@ Page({
                   colorLight: "white",
                   correctLevel: QRCode.CorrectLevel.H,
                 });
-                console.log("能走到169行吗：：")
+                console.log("能走到191行吗：：")
                 // 生成图片，绘制完成后调用回调
                 if(z.data.qrid !==""){
-                  qrcode.makeCode(z.data.qrid, () => {
+                  // qrcode.makeCode(z.data.qrid, () => {
                     // 回调
                     setTimeout(() => {
                       qrcode.exportImage(function(path) {
@@ -205,7 +205,7 @@ Page({
                         )
                       })
                     }, 100)
-                  })
+                  // })
                 }
                 
               }
@@ -277,6 +277,7 @@ Page({
         z.setData({
           imgsrc: path
         },()=>{
+          console.log("imgsrc是什么啊，高明彪贼想知道！！！", z.data.imgsrc)
           z.onShow()
         })
       })

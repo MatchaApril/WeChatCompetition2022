@@ -1,5 +1,6 @@
 // pages/add_product/add_product.js
 const db = wx.cloud.database()
+const util = require('../../utils/utils.js')
 Page({
 
   /**
@@ -16,7 +17,8 @@ Page({
     }],
     fenlei:[],
     img:'',
-    color: ''
+    color: '',
+    DATE:""
   },
   // 上传图片
   upload_img:function(){
@@ -51,30 +53,30 @@ Page({
       }
     })
   },
-  // delete: function (e) {
-  //   let that = this
-  //   console.log(that.data.img)
-  //   console.log(e.currentTarget.dataset.id)
-  //   var id = e.currentTarget.dataset.id;
-  //   var img= that.data.img;
-  //   // img.splice(id,1)
-  //   that.setData({
-  //     img: ''
-  //   })
-  //   console.log("e.currentTarget.dataset.src",e.currentTarget.dataset.src)
-  //   wx.cloud.deleteFile({
+  delete: function (e) {
+    let that = this
+    console.log(that.data.img)
+    console.log(e.currentTarget.dataset.id)
+    var id = e.currentTarget.dataset.id;
+    var img= that.data.img;
+    // img.splice(id,1)
+    that.setData({
+      img: ''
+    })
+    console.log("e.currentTarget.dataset.src",e.currentTarget.dataset.src)
+    wx.cloud.deleteFile({
       
-  //     fileList: [e.currentTarget.dataset.src],
-  //     success: res => {
-  //       // handle success
-  //       console.log(res.fileList)
-  //     },
-  //     fail: err => {
-  //       console.log("add_product行错误")
-  //     },
-  //   })
-  //   console.log(that.data.img)
-  // },
+      fileList: [e.currentTarget.dataset.src],
+      success: res => {
+        // handle success
+        console.log(res.fileList)
+      },
+      fail: err => {
+        console.log("add_product行错误")
+      },
+    })
+    console.log(that.data.img)
+  },
   submit:function(e){
     let that = this
     console.log(e)
@@ -123,6 +125,11 @@ Page({
         // handle success
         that.setData({
           img: ''
+        },()=>{
+          wx.showToast({
+            title: '重置成功',
+          })
+          
         })
         console.log(res.fileList)
       },
@@ -144,6 +151,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    
     value:''
   },
 
@@ -158,7 +166,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    var DATE = util.formatTime(new Date());
+    this.setData({
+      DATE:DATE.split(" ")[0]
+    })
   },
 
   /**

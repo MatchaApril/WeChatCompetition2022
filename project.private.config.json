@@ -76,6 +76,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "添加物品",
+          "pathName": "pages/add_product/add_product",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

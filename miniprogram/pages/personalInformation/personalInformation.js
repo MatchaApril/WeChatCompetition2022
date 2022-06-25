@@ -20,16 +20,18 @@ Page({
               success(res) {
                   that.setData({
                       openid:res.data,
+                  },()=>{
+                        that.getUserInformation();
                   })
                   console.log(that.data.openid)
                  }
             })
             console.log(that.data.openid)
-            this.getUserInformation();
-            
       },
       //获取用户信息
       getUserInformation: function (){
+            let that = this;
+            that.data.openid
             db.collection('user').where({
                   _openid: this.data.openid
            }).get({

@@ -34,6 +34,75 @@
   width: 500rpx;
 }
 
+.list_box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+}
+.list_word {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.list_poster {
+  width: 260rpx;
+  height: 230rpx;
+}
+.list_content {
+  height: 230rpx;
+  width: calc(100% - 230rpx);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 14rpx;
+  box-sizing: border-box;
+}
+.list_title {
+  width: 100%;
+  font-size: 35rpx;
+  letter-spacing: 3rpx;
+  line-height: 45rpx;
+  font-weight: bold;
+  
+}
+.list_author {
+  padding-top: 15rpx;
+  /* padding-bottom: 20rpx; */
+  width: 100%;
+  font-size: 23rpx;
+  letter-spacing: 3rpx;
+  line-height: 40rpx;
+  color: rgb(129, 129, 129);
+  -webkit-line-clamp: 3;
+
+ text-overflow:ellipsis;
+ z-index: -1;
+ display: -webkit-box;
+ word-break: break-all;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+}
+.list_between {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 10rpx;
+}
+.list_price {
+  font-size: 36rpx;
+  color: rgb(255, 0, 0);
+}
+.list_time {
+  font-size: 28rpx;
+  letter-spacing: 2rpx;
+  color: rgb(100, 99, 99);
+}
 .search {
   width: 20%;
   height: 66rpx;

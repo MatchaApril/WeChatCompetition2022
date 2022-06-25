@@ -42,7 +42,7 @@ Page({
       color: "purple",
       iconpath: '/images/账号管理.png',
       classifier: "Personal",
-      url: "/pages/message/message",
+      url: "/pages/personalInformation/personalInformation",
     }
   ],
   },

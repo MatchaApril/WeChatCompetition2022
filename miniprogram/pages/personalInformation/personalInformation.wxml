@@ -19,13 +19,6 @@
                   <view>姓名：{{userInformation.name}}</view>
             </view>
       </view>
-      <view class="bottom_card">
-            <view class="bottom_1">
-                  <image src="/images/首页.png"></image>
-                  <view wx:if="{{userInformation.gender==1}}">性别：男</view>
-                  <view wx:elif="{{userInformation.gender==0}}">性别：女</view>
-            </view>
-      </view>
       <view class="bottom_card" >
             <view class="bottom_1">
                   <image src="/images/标签.png"></image>

@@ -245,7 +245,7 @@
 
 .catalog .bd .product1 .product3 .product3_2 .btn{
   width: 35%;
-  height: 45rpx;
+  height: 50rpx;
   display: flex;
   flex-direction: row-reverse;
   padding-right: 20rpx;

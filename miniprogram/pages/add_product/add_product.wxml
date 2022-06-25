@@ -23,7 +23,7 @@
 
      <!-- 左边时间，右边下载次数 -->
      <view class="text-gray text-sm flex justify-between">
-      {{item.time}}
+      {{DATE}}
 
       
       <!-- <view class="text-gray text-sm">
@@ -49,35 +49,35 @@
     <view class="upload">
 
       <view class="upload_1">
-        <view>物品名称：</view>
-        <input placeholder="请输入物品名称" name="name"> </input>
+        <view class="defination">物品名称：</view>
+        <input placeholder="请输入名称" name="name"> </input>
       </view>
 
       <view class="line"></view>
 
       <view class="upload_1">
-        <view>物品数量：</view>
-        <input placeholder="输入物品数量(不小于5)" name="number"> </input>
+        <view class="defination">物品数量：</view>
+        <input placeholder="请输入数量(不小于5)" name="number"> </input>
       </view>
 
       <view class="line"></view>
 
 
       <view class="upload_1">
-        <view>发放机ID：</view>
-        <input placeholder="要放入的发放机ID" name="machine_id"> </input>
+        <view class="defination">发放机ID：</view>
+        <input placeholder="发放机ID" name="machine_id"> </input>
       </view>
 
       <view class="line"></view>
 
       <view class="upload_1">
-        <view >物品价格：</view>
-        <input placeholder="请输入该物品单价" name="price"> </input>
+        <view class="defination" >物品价格：</view>
+        <input placeholder="请输入物品单价" name="price"> </input>
       </view>
       <view class="line"></view>
 
       <view class="upload_1" style="margin-bottom: 20rpx;">
-        <radio-group name="type" style="padding-top: 10rpx;">
+        <radio-group name="type" style="padding-top: 10rpx;padding-left: 20rpx;">
           <radio value="0">基础医疗物品</radio>
           <radio value="1" style="margin-left: 50rpx;">学生申请物品</radio>
         </radio-group>
@@ -101,7 +101,7 @@
       <button size="mini" type="primary" bindtap="upload_img" >添加图片</button>
     </view>
 
-    <image src="{{img}}" style="width:100rpx;height:100rpx"></image>
+    <image  class="xuanzeImg"  src="{{img}}" ></image>
     <!-- 删除图片 -->
     <!-- <button size="mini" type="warn" plain="true" bindtap="delete" data-id="{{index}}" data-src="{{img}}">删除图片</button> -->
 
@@ -116,8 +116,8 @@
 
 <!-- 提交 重置按钮 -->
 <view class="btn-area">
-  <button style="margin: 30rpx 0" form-type="submit" type="primary" >提交</button>
-  <button  style="margin: 30rpx 0" formType="reset" type="default" data-src="{{img}}" >重置</button>
+  <button class="btn_submin" form-type="submit" type="primary" >提交</button>
+  <button  class="btn_reset"  style="margin: 30rpx 0" formType="reset" type="warn" data-src="{{img}}" >重置</button>
 </view>
 
 </view>
@@ -127,8 +127,5 @@
 
 
 
-<navigator url="../check_machine_resource/check_machine_resource"> GOGOGOGOO</navigator>
-<navigator url="../machine_resource/machine_resouce"> 色卡生成器</navigator>
 
-<navigator url="../check_user_reserve/check_user_reserve">转移申请页面</navigator>
 

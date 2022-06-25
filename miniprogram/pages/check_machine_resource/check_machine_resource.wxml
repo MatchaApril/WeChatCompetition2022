@@ -98,8 +98,3 @@
   </view>
 </view>
 
-
-<navigator url="../check_user_reserve/check_user_reserve">转移申请页面</navigator>
-
-<navigator url="../add_product/add_product">转移添加页面</navigator>
-<navigator url="../new_machine/new_machine">new_machine</navigator>

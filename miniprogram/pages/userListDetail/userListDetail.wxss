@@ -98,15 +98,16 @@ image {
 }
 
 .avator {
-  width: 240rpx;
-  height: 240rpx;
-  border-radius: 80rpx;
+  width: 340rpx;
+  height: 340rpx;
+  border-radius: 70rpx;
   overflow: hidden;
 }
 
 .avator image {
-  width: 140rpx;
-  height: 140rpx;
+  width: 240rpx;
+  height: 240rpx;
+  margin-left:40rpx;
 }
 
 .center_box {
@@ -251,7 +252,6 @@ image {
   opacity: 0.01;
   border: none;
 }
-
 .share_button::after {
   border: none;
 }

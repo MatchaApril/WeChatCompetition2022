@@ -1,4 +1,5 @@
-/* pages/login/login.wxss *//* 最大的父元素 */
+
+
 .v1{
   display: block;
   position:absolute;

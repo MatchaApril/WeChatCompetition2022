@@ -1,0 +1,30 @@
+<!-- 列表显示 -->
+<view >
+      <block wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:key="_id">
+                  <view class="list_box" bindtap="detail" data-id="{{item._openid}}">
+                        <image lazy-load class="list_poster" src="{{item.avatarUrl}}"></image>
+                        <view class="list_content">
+                              <view class="list_word">
+                                    <view class="list_title text-cut">{{item.nickName}}
+                                    </view>
+                                    <view class="list_author text-cut">姓名：{{item.name}}
+                                    </view>
+                                    <view class="list_author text-cut">电话：{{item.tel}}
+                                    </view>
+                              </view>
+                              <!-- <view class="list_between">
+                                    <view class="list_time">{{item.publish_time}}
+                                    </view>
+                              </view> -->
+                        </view>
+                  </view>
+                  
+            </block>
+      </block>
+</view>
+<!--无内容显示-->
+<view class="nocontent" wx:if="{{list.length==0}}">
+      <image lazy-load src="/images/blank.png"></image>
+      <view class="blank_text">这里空空如也~</view>
+</view>

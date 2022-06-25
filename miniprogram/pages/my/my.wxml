@@ -11,21 +11,6 @@
 </view>
 </view>
 
-
-<!-- <view class="top_box">
-      <view class="top_1">
-            <view  class="top_1_1">
-                  <open-data type="userNickName"></open-data>
-            </view>
-             <view class="top_1_2"  bindtap="go" data-go="/pages/edit/edit" data-status="1">点击修改资料(none)</view>
-      </view>
-      <view class="top_2">
-            <view class="avator">
-                  <open-data  type="userAvatarUrl"></open-data>
-                  <image  src="/images/avator.png"></image>
-            </view>
-      </view>
-</view> -->
 <view class="center_box">
       <view class="center_1" bindtap="go" data-go="/pages/sell/list/list" data-status="1">
             <image src="/images/history.png"></image>

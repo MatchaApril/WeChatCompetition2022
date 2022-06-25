@@ -1,0 +1,30 @@
+<view class='UCenter-bg'>
+      <view class="avator">
+                  <image  src="{{userInformation.avatarUrl}}"></image>
+      </view>
+<!-- <view class='text-xl text-xl' bindtap="modalinput">
+  <view>{{userInformation.nickName}}</view>
+</view> -->
+</view>
+
+<view class="blank"></view>
+<view class="bottom_box">
+  <view class="bottom_card" >
+            <view class="bottom_1">
+                  <image src="/images/标签.png"></image>
+                  <view>昵称：{{userInformation.nickName}}</view>
+            </view>
+      </view>
+      <view class="bottom_card" >
+            <view class="bottom_1">
+                  <image src="/images/活动.png"></image>
+                  <view>姓名：{{userInformation.name}}</view>
+            </view>
+      </view>
+      <view class="bottom_card" >
+            <view class="bottom_1">
+                  <image src="/images/标签.png"></image>
+                  <view>电话：{{userInformation.tel}}</view>
+            </view>
+      </view>
+</view>

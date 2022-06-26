@@ -2,7 +2,7 @@
 
 
 <modal hidden="{{hiddenmodalput}}" title="请输入拒绝理由" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{item._id}}">
-        <input type='text' placeholder="请输入内容(15字)" auto-focus maxlength="15" bindblur='rejectReason'></input>
+        <input type='text' placeholder="请输入内容(15字)" auto-focus maxlength="20" bindblur='rejectReason' value="{{noneValue}}" ></input>
 </modal>
 <view class="cu-card">
  <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
@@ -128,17 +128,20 @@
         <view style="font-size: 37rpx; height: 65rpx;">发起人：{{item.name}}({{item.student_number}})</view>
         <view style="font-size: 37rpx; height: 65rpx;">申报时间：{{item.time_apply}}</view>
 
+        <view style="font-size: 37rpx; height: 65rpx;">审批时间：{{item.time_approve}}</view>
+
         <view class="zhuangtai">
           <view style="font-size: 37rpx; height: 65rpx;">状态：</view>
           <view wx:if="{{item.status == 0}}" style="font-size: 37rpx; color:red; height: 65rpx;">已拒绝</view>
           <view wx:if="{{item.status == 1}}" style="font-size: 37rpx; color: green; height: 65rpx;">通过</view>
-          <view wx:if="{{item.status == 2}}" style="font-size: 37rpx; color: red; height: 65rpx;">被领取</view>
-          
-
-          
+          <view wx:if="{{item.status == 2}}" style="font-size: 37rpx; color: red; height: 65rpx;">被领取</view>       
         </view>
+        
 
-        <view style="font-size: 37rpx; height: 130rpx;">原因：{{item.reason}}</view>
+        <view class="rejectReason" wx:if="{{item.reject.length > 0}}" >
+          <view style="font-size: 37rpx; height: 130rpx;">拒绝原因：{{item.reject}}</view>
+        </view>
+        
       
       </view>
       
@@ -152,7 +155,7 @@
 
 
 
-<navigator url="../add_product/add_product">转移添加页面</navigator>
+
 
 
 

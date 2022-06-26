@@ -39,6 +39,7 @@ Page({
     state_approving:'未审批',
     nums_approving:0,
     nums_approved:0,
+    numss:0,
     // openid+id
     qrid:"",
     // 二维码保存地址
@@ -52,7 +53,8 @@ Page({
     user_openid:"",
     hiddenmodalput:true,
     reject:"",
-    nowAdd:""
+    nowAdd:"",
+    noneValue:""
 
 
   },
@@ -91,9 +93,15 @@ Page({
         that.setData({
           user_reserve_approved:res.data,
           nums_approved:res.data.length,
+          
+        },()=>{
+          let num_temp = that.data.nums_approved + that.data.nums_approving
+          that.setData({
+            numss: num_temp
+          })
         })
       },fail:res=>{
-        console.log("获取用户申请过失败")
+        console.log("获取用户申请失败")
       }
     })
     
@@ -255,7 +263,52 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
+     let that = this
+     console.log("that.data.numss",that.data.numss)
+     wx.showLoading({
+      title: '刷新中！',
+      duration: 900
+    })
+    console.log("that.data.user_reserve_approvingthat.data.user_reserve_approving",that.data.user_reserve_approving)
+    let old_data_approving = that.data.user_reserve_approving;
+    let old_data_approved = that.data.user_reserve_approved;
+    db.collection("user_reserve").skip(that.data.numss)
+    .get().then(res=>{
+      if (res.data == "") {
+        wx.showToast({
+          icon: 'none',
+          title: '已经加载完毕'
+        })
+      }
+      for(var i = 0; i < res.data.length; i++) {
+        // 未审批
+        console.log("res.data[i].is_approveres.data[i].is_approve",res.data[i].is_approve)
+        if(res.data[i].is_approve == 0) {
+          old_data_approving = old_data_approving.concat(res.data[i])
+        }
+        else{
+          old_data_approved = old_data_approved.concat(res.data[i])
+        }
 
+        if( i == res.data.length - 1) {
+          that.setData({
+            user_reserve_approved:old_data_approved,
+            user_reserve_approving:old_data_approving,
+            nums_approved:old_data_approved.length,
+            nums_approving:old_data_approving.length,
+            numss:(old_data_approved.length + old_data_approving.length)
+          })
+        }
+      }
+      
+
+
+      console.log("res",res)
+    })
+    .catch(err=>{
+      console.error(err)
+    })
+    console.log("circle下一页")
   },
 
   /**
@@ -310,7 +363,8 @@ Page({
     console.log(e.target.dataset.id)
     that.setData({
       hiddenmodalput: !that.data.hiddenmodalput,
-      nowAdd:e.currentTarget.dataset.id
+      nowAdd:e.currentTarget.dataset.id,
+      noneValue:""
     })
   },
   // 取消拒绝

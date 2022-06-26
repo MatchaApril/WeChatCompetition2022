@@ -83,6 +83,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "商品展示",
+          "pathName": "pages/check_machine_resource/check_machine_resource",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "HOME",
+          "pathName": "pages/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -1,12 +1,20 @@
 // pages/check_machine_resource/check_machine_resource.js
 const db = wx.cloud.database()
 const _ = db.command
+
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    carouselImgUrls:[
+      "/images/校园5.png",
+      "/images/校园6.png",
+      "/images/校园7.png",
+    ],
     // 访问物资数据库，用一个列表分别保存所有物资数量，另一个列表保存所有阈值
     // [[xxx],[x]]
     // [[xxx],[x]]
@@ -27,13 +35,21 @@ Page({
     idx:0,
     hiddenmodalput:true,
     add:0,
-    nowAdd:""
+    nowAdd:"",
+    currentIndex: 0,
+    noneValue:""
 
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
+  swiperChange(e) {
+    this.setData({
+      currentIndex: e.detail.current
+    });
+  },
   onLoad() {
     let that = this
     var tempNum = that.data.currentNum
@@ -287,7 +303,8 @@ Page({
     let that = this
     that.setData({
       hiddenmodalput: !that.data.hiddenmodalput,
-      nowAdd:e.currentTarget.dataset.id
+      nowAdd:e.currentTarget.dataset.id,
+      noneValue:""
     })
 
 

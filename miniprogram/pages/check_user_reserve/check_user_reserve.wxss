@@ -317,6 +317,13 @@ cu-list+.cu-list {
   display: flex;
   flex-direction: row;
 }
+
+.rejectReason{
+  display: flex;
+  flex-direction: row;
+}
+
+
 .YesNo{
   display: flex;
   flex-direction: row;

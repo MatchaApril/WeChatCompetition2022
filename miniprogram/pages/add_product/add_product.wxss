@@ -229,7 +229,7 @@ cu-list+.cu-list {
 }
 .upload_detail{
   width: 96%;
-  height: 200rpx;
+  height: 250rpx;
   display: flex;
   align-items: center;
   align-self: center;

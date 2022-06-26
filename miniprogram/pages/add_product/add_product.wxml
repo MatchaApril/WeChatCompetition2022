@@ -63,12 +63,12 @@
       <view class="line"></view>
 
 
-      <view class="upload_1">
+      <!-- <view class="upload_1">
         <view class="defination">发放机ID：</view>
-        <input placeholder="发放机ID" name="machine_id"> </input>
-      </view>
+        <input  name="machine_id" value="{{id}}"> </input>
+      </view> -->
 
-      <view class="line"></view>
+      <!-- <view class="line"></view> -->
 
       <view class="upload_1">
         <view class="defination" >物品价格：</view>
@@ -98,10 +98,11 @@
 
     <!-- 选择图片 -->
     <view class="anniu">
-      <button size="mini" type="primary" bindtap="upload_img" >添加图片</button>
+      <!-- <button size="mini" type="primary" bindtap="upload_img" >添加图片</button> -->
+      <image src="/images/add.png" style="width:100rpx;height:100rpx;border:1rpx solid silver;" bindtap='upload_img' ></image>
     </view>
 
-    <image  class="xuanzeImg"  src="{{img}}" ></image>
+    <image  class="xuanzeImg"  src="{{img}}" bindlongpress="delete" data-id="{{index}}" data-src="{{img}}" ></image>
     <!-- 删除图片 -->
     <!-- <button size="mini" type="warn" plain="true" bindtap="delete" data-id="{{index}}" data-src="{{img}}">删除图片</button> -->
 

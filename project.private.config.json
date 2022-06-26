@@ -97,6 +97,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "乐佳的发布咨询页面",
+          "pathName": "pages/messageCreate/messageCreate",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

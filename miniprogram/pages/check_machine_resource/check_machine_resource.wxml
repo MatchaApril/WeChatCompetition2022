@@ -50,6 +50,11 @@
             <text class="line"></text>
             <text class="txt">列表</text>
             <text class="line"></text>
+            <navigator   class="nav_add"  style="margin-left: 50rpx;"   url="../add_product/add_product?id={{currentNum}}">
+              <view class="listAddProduct" >添加物品
+              
+              </view>
+            </navigator>
         </view>
 
 

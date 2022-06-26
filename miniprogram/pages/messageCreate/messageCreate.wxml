@@ -13,6 +13,7 @@
 </view>
 
 <view class='main_view'>
+
  <view class="three_view">
 
   <view>
@@ -50,6 +51,15 @@
 
  </view>
 </view>
+
+
+
+
+
+
+
+
+
 
 <view class="button_view">
   <button class="upload_button" bindtap='upload'>发     布</button>

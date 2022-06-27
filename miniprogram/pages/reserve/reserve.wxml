@@ -1,0 +1,47 @@
+
+
+<form bindsubmit="buttonaddData">
+
+<view class="top">
+    <view class="t-top">温馨提示：用于申请处方药品哦！</view>
+</view>
+
+    <view class="center">
+    <view class="mod-a">
+    <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <text class="key">申请人：</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="name" bindblur="getTitle" placeholder="请输入申请人姓名"/>
+            </view>
+    </view>
+    </view>
+    <view class="mod-a">
+    <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <text class="key">药品名称：</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="reserve_name" bindblur="getTitle" placeholder="请输入申请药品名称"/>
+            </view>
+    </view>
+    </view>
+    <view class="mod-a">
+    <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <text class="key">用药原因:</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="reason" bindblur="getTitle" placeholder="请输入申请药品原因"/>
+            </view>
+    </view>
+    </view>
+</view>
+
+<view class="bottom">
+    <button class="button-submit" type="primary" form-type="submit">提交</button>
+    <button class="button-submit" type="default" form-type="reset">重置</button>
+</view>
+</form>
+

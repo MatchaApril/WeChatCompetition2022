@@ -1,0 +1,86 @@
+.top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 30rpx;
+  padding: 0 24rpx;
+  background: #fff;
+}
+
+.t-top{
+  font-family: 宋体;
+  color:yellow;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+  margin:auto;
+}
+.center{
+    height:70%;
+    width:100%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right:0;
+    margin: 0;
+}
+.bottom{
+    position:fixed;
+    height: 200px;
+    left: 0;
+    right:0;
+    border:1px #888;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 0;
+}
+
+.button-submit {
+  margin-top: 50rpx;
+}
+
+.weui-cell_input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.weui-cell__hd {
+  width: 36%;
+  left: 0;
+  display: flex;
+}
+.weui-cell__bd {
+  width: 64%;
+}
+
+.key {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0rpx;
+}
+.weui-input {
+  margin-left: 50rpx;
+}
+
+.mod-a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px solid rgb(214, 200, 200);
+    background-color: #fff;
+    margin: 20px;
+    width: 80%;
+    height: 100rpx;
+}
+page{
+  background-color: white;
+}

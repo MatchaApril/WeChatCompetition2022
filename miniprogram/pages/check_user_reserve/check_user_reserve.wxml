@@ -57,6 +57,7 @@
 
 
 
+
 <!-- 选择栏 -->
 <view class="allxuanze">
 <!-- 审批导航 -->
@@ -65,6 +66,11 @@
   <!-- <view class="viewParent">
     <view class="view1"> 
       <image style="width: 100%;height: 210rpx;"></image>
+=======
+  <view class="viewParent">
+    <view class="view1"> 
+      <image src="cloud://cloud1-9gcef6nu6fc89a19.636c-cloud1-9gcef6nu6fc89a19-1311107941/医用物品img/红十字会.png" style="width: 100%;height: 210rpx;"></image>
+
     </view>
 
     <view class="shenpi">
@@ -85,8 +91,16 @@
       
       
     </view>
+
   </view> -->
   
+
+
+  </view>
+  
+  <!-- <view>???????????????????????</view>
+  <view>???????????????????????</view>
+  <view>???????????????????????</view> -->
 
 
   <!-- 未审批 -->
@@ -104,21 +118,25 @@
         <view style="font-size: 37rpx; height: 130rpx;">原因：{{item.reason}}</view>
       </view>
 
+
       <!-- 同意拒绝的横线 -->
+
       <view class="line1"></view>
       <!-- 拒绝，同意申请事件 -->
       <view class="YesNo">
         <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="jujue" data-id="{{item._id}}">拒绝</view>
 
-        
-
-
+      
         <view  style="font-size: 45rpx; height: 65rpx;font-weight: 500;">|</view>
+
+
+        <!-- <view  style="font-size: 45rpx; height: 65rpx;font-weight: 800;">|</view> -->
 
         <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="tongyi" data-id="{{item._id}}">同意</view>
       </view>
     </view>
   </view>
+
 
   <!-- 已审批 -->
   <view wx:if="{{state_approving == '已审批'}}">
@@ -143,20 +161,18 @@
           <view style="font-size: 37rpx; height: 130rpx;">拒绝原因：{{item.reject}}</view>
         </view>
         
+
       
       </view>
       
     </view>
   </view>
-</view>
+
+
 
 <view  style='width:0px;height:0px;overflow:hidden;'>
   <canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
 </view>
-
-
-
-
 
 
 

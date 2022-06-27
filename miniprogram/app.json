@@ -3,7 +3,7 @@
     "pages/login/login",
     "pages/check_machine_resource/check_machine_resource",
     "pages/check_user_reserve/check_user_reserve",
-    "pages/machine_resource/machine_resouce",
+    
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",

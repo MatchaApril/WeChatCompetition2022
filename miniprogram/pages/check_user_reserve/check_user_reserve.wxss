@@ -3,6 +3,7 @@ Page{
   background-color: rgb(245,245,245);
 }
 
+
 .cu-card {
   display: block;
   overflow: hidden;
@@ -191,15 +192,6 @@ cu-list+.cu-list {
 }
 
 
-
-
-
-
-
-
-
-
-
 .viewParent{
   position: relative;
   z-index: 1;
@@ -213,6 +205,7 @@ cu-list+.cu-list {
   align-items: center;
   align-self: center;
   margin-bottom: 60rpx;
+
 }
 .view1{
   position: absolute;
@@ -227,7 +220,7 @@ cu-list+.cu-list {
   width: 90%;
   height: 160rpx;
   border-radius: 40rpx;
-  
+
   background-color: rgb(255,255,255);
   display: flex;
   flex-direction: row;
@@ -246,6 +239,7 @@ cu-list+.cu-list {
   margin-left: 20%;
   width: 40%;
   font-size: 32rpx;
+
   font-size: x-large;
 }
 
@@ -265,6 +259,7 @@ cu-list+.cu-list {
   margin-right: 20%;
   width: 40%;
   font-size: 32rpx;
+
   font-size: x-large;
 }
 .nums_approved{
@@ -279,12 +274,14 @@ cu-list+.cu-list {
 
 
 .xuanze_1{
+
   width: 100%;
   display: flex;   
 
   justify-content: center;   
 
   align-items: center; 
+
 }
 .xuanze_2{
   
@@ -318,10 +315,12 @@ cu-list+.cu-list {
   flex-direction: row;
 }
 
+
 .rejectReason{
   display: flex;
   flex-direction: row;
 }
+
 
 
 .YesNo{
@@ -341,6 +340,7 @@ cu-list+.cu-list {
   background-color: rgb(200,200,200);
   margin-bottom: 10rpx;
 }
+
 
 
 .canvas {

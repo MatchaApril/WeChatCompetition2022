@@ -1,9 +1,13 @@
 {
+<<<<<<< Updated upstream
   "setting": {},
+=======
+>>>>>>> Stashed changes
   "condition": {
     "miniprogram": {
       "list": [
         {
+<<<<<<< Updated upstream
           "name": "db guide",
           "pathName": "pages/databaseGuide/databaseGuide",
           "query": ""
@@ -114,10 +118,14 @@
         },
         {
           "name": "审批页面",
+=======
+          "name": "",
+>>>>>>> Stashed changes
           "pathName": "pages/check_user_reserve/check_user_reserve",
           "query": "",
           "launchMode": "default",
           "scene": null
+<<<<<<< Updated upstream
         },
         {
           "name": "乐佳要加bottom的页面",
@@ -125,6 +133,8 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+=======
+>>>>>>> Stashed changes
         }
       ]
     }

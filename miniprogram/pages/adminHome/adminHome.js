@@ -35,7 +35,7 @@ Page({
       {
         icon: "/images/清单.png",
         name: "----数据管理----资讯信息",
-        url: "/pages/messageCreate/messageCreate"
+        url: "/pages/message/message"
       },
       {
         icon: "/images/信息管理.png",
@@ -44,8 +44,8 @@ Page({
       },
       {
         icon: "/images/个人信息1.png",
-        name: "----数据管理----学生信息",
-        url: "/pages/messageCreate/messageCreate"
+        name: "----数据管理----用户信息",
+        url: "/pages/userList/userList"
       },
     ]
   },

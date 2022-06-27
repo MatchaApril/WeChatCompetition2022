@@ -2,7 +2,7 @@ page {
   background-color: rgb(255, 255, 255);
 }
 .UCenter-bg {
-  background-color: #3B49E0;
+  background-color: rgba(175, 232, 255, 0.911);
   height: 340rpx;
   display: flex;
   padding-top: 40rpx;

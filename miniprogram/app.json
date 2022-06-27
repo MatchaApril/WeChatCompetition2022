@@ -25,8 +25,12 @@
     "pages/messageCreate/messageCreate",
     "pages/messageDetail/messageDetail",
     "pages/adminLogin/adminLogin",
+    "pages/search/search",
+    "pages/personalInformation/personalInformation",
     "pages/add_product/add_product",
-    "pages/new_machine/new_machine"
+    "pages/new_machine/new_machine",
+    "pages/userList/userList",
+    "pages/userListDetail/userListDetail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

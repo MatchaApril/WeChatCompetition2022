@@ -38,7 +38,13 @@ page{
 
 .cu-list.menu-avatar>.cu-item>.cu-avatar {
   position: absolute;
-  left: 30rpx
+  left: 30rpx;
+  overflow: hidden;
+}
+.openImg{
+  height: 100%;
+  width: 100%;
+
 }
 
 
@@ -173,6 +179,7 @@ cu-list+.cu-list {
 }
 
 .text-grey {
+  margin-left: 10rpx;
   color: #8799a3;
 }
 
@@ -229,7 +236,7 @@ cu-list+.cu-list {
 }
 .upload_detail{
   width: 96%;
-  height: 300rpx;
+  height: 250rpx;
   display: flex;
   align-items: center;
   align-self: center;
@@ -237,40 +244,90 @@ cu-list+.cu-list {
   flex-direction: column;
   background-color: #fff;
   border-radius: 15rpx;
-  margin-top: 20rpx;
+  margin-top: 15rpx;
 }
 .upload_1{
   display: flex;
   flex-direction: row;
   width: 90%;
-  height: 50rpx;
+  height: 80rpx;
   margin-top: 20rpx;
+  align-items: center;
+}
+
+.defination{
+  width: 180rpx;
+  font-weight: bold;
+  padding-right: 40rpx;
+  padding-left: 20rpx;
 }
 
 .img{
   display: flex;
   width: 96%;
-  height: 100rpx;
+  height: 280rpx;
   background-color: #fff;
-  align-self: center;
+  /* align-self: center; */
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   border-radius: 20rpx;
-  margin-top: 5rpx;
+  margin-top: 15rpx;
 }
 
+.img_1{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 20rpx; */
+}
+
+.pictuer_text
+{
+  color: #cdcdcd;
+  font-size: 26rpx;
+  margin-bottom: 15rpx;
+  margin-top: 8rpx;
+  margin-left: 80rpx;
+}
+
+
 .anniu{
+
   display: flex;
   height: 150rpx;
   flex-direction: row;
   align-self: center;
   justify-content: center;
   align-items: center;
+  padding-left: 20rpx;
+}
+.xuanzeImg{
+  width: 100rpx;
+  height: 100rpx;
+  padding-left: 170rpx;
+  /* margin-bottom: 20rpx; */
 }
 
+
+
+
+
 .btn-area{
+  margin-top: 20rpx;
+  background-color: #fff;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.btn_submin{
+  width: 100rpx;
+  margin-top: 20rpx;
+
+}
+.btn_reset{
+  margin-top: 20rpx;
 }

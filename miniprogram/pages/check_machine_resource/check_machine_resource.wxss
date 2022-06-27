@@ -54,7 +54,9 @@
   border-left: 1px solid #fafafa;
   flex: 1;
   height: 1500rpx;
-  padding: 0 30rpx 0 30rpx;
+  padding-left: 35rpx;
+  padding-right: 10rpx;
+  /* padding: 0 30rpx 0 30rpx; */
 }
 
 
@@ -114,7 +116,7 @@
   top: 30rpx;
   text-align: center;
   color: #fff;
-  font-size: 28rpx;
+  font-size: 30rpx;
   left: 0;
   height: 192rpx;
   line-height: 192rpx;
@@ -129,6 +131,26 @@
   align-items: center;
 }
 
+.nav_add{
+  margin-left: 50rpx;
+}
+.listAddProduct{
+  /* margin-left: 100rpx; */
+  /* 字体颜色 */
+  color: rgb(250,165,0);
+  /* background-color: ; */
+  width: 170rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* font-weight: bold; */
+  border-radius: 20rpx;
+  border: 2px solid rgb(250,165,0); 
+  /* margin-left:40rpx */
+  
+  
+}
+
 .catalog .hd .txt {
   font-size: 24rpx;
   text-align: center;
@@ -139,7 +161,7 @@
 
 .catalog .hd .line {
   width: 40rpx;
-  height: 1px;
+  height: 2px;
   background: #d9d9d9;
 }
 
@@ -245,7 +267,7 @@
 
 .catalog .bd .product1 .product3 .product3_2 .btn{
   width: 35%;
-  height: 45rpx;
+  height: 50rpx;
   display: flex;
   flex-direction: row-reverse;
   padding-right: 20rpx;
@@ -275,6 +297,64 @@
   
 
 
+}
+
+.swiper-block {
+  background: #fff;
+  height: 300rpx;
+  width: 98%;
+}
+
+.swiper-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  overflow: unset;
+  width: 550rpx;
+  height: 450rpx;
+  padding-top: 70rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+/* 修改图片高宽 */
+.slide-image{
+  height: 300rpx;
+  width: 90%;
+  border-radius: 10rpx;
+  margin-left: 50rpx;
+  /* margin: 40rpx 50rpx ; */
+  z-index: 1;
+  box-shadow: 10rpx 5px 40rpx rgba(0, 0, 0,0.5);
+}
+.active1{
+  transform: scale(1.3);
+  transition: all .5s ease-in 0s;
+  z-index: 20;
+  opacity: 1;
+}
+.common{
+  transform: scale(1);
+  transition: all .5s ease-in 0s;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.dots-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots{
+  width: 30rpx;
+  height: 6rpx;
+  margin: 0 4rpx;
+  background-color: #aaa;
+  margin-top: -80rpx;
+}
+.bg-333{
+  background-color: #333;
 }
 /* .catalog .bd .product1 .product3 .product3_2 .addProduct {
   

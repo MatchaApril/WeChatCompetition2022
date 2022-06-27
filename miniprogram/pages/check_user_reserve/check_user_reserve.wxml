@@ -1,9 +1,10 @@
 <!--pages/check_user_reserve/check_user_reserve.wxml-->
 
-
+<!-- 整个点击后的框框 -->
 <modal hidden="{{hiddenmodalput}}" title="请输入拒绝理由" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{item._id}}">
-        <input type='text' placeholder="请输入内容(15字)" auto-focus maxlength="15" bindblur='rejectReason'></input>
+        <input type='text' placeholder="请输入内容(15字)" auto-focus maxlength="20" bindblur='rejectReason' value="{{noneValue}}" ></input>
 </modal>
+
 <view class="cu-card">
  <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
   bindtap="geturl" data-url="{{item.url}}" data-upname="{{item.up_name}}" data-name="{{item.title}}"
@@ -56,6 +57,7 @@
 
 
 
+
 <!-- 选择栏 -->
 <view class="allxuanze">
 <!-- 审批导航 -->
@@ -64,6 +66,11 @@
   <!-- <view class="viewParent">
     <view class="view1"> 
       <image style="width: 100%;height: 210rpx;"></image>
+=======
+  <view class="viewParent">
+    <view class="view1"> 
+      <image src="cloud://cloud1-9gcef6nu6fc89a19.636c-cloud1-9gcef6nu6fc89a19-1311107941/医用物品img/红十字会.png" style="width: 100%;height: 210rpx;"></image>
+
     </view>
 
     <view class="shenpi">
@@ -84,8 +91,16 @@
       
       
     </view>
+
   </view> -->
   
+
+
+  </view>
+  
+  <!-- <view>???????????????????????</view>
+  <view>???????????????????????</view>
+  <view>???????????????????????</view> -->
 
 
   <!-- 未审批 -->
@@ -103,21 +118,25 @@
         <view style="font-size: 37rpx; height: 130rpx;">原因：{{item.reason}}</view>
       </view>
 
+
       <!-- 同意拒绝的横线 -->
+
       <view class="line1"></view>
       <!-- 拒绝，同意申请事件 -->
       <view class="YesNo">
         <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="jujue" data-id="{{item._id}}">拒绝</view>
 
-        
-
-
+      
         <view  style="font-size: 45rpx; height: 65rpx;font-weight: 500;">|</view>
+
+
+        <!-- <view  style="font-size: 45rpx; height: 65rpx;font-weight: 800;">|</view> -->
 
         <view style="font-size: 45rpx; color: rgb(252,100,100); height: 65rpx;font-weight: 800;" bindtap="tongyi" data-id="{{item._id}}">同意</view>
       </view>
     </view>
   </view>
+
 
   <!-- 已审批 -->
   <view wx:if="{{state_approving == '已审批'}}">
@@ -128,30 +147,32 @@
         <view style="font-size: 37rpx; height: 65rpx;">发起人：{{item.name}}({{item.student_number}})</view>
         <view style="font-size: 37rpx; height: 65rpx;">申报时间：{{item.time_apply}}</view>
 
+        <view style="font-size: 37rpx; height: 65rpx;">审批时间：{{item.time_approve}}</view>
+
         <view class="zhuangtai">
           <view style="font-size: 37rpx; height: 65rpx;">状态：</view>
           <view wx:if="{{item.status == 0}}" style="font-size: 37rpx; color:red; height: 65rpx;">已拒绝</view>
           <view wx:if="{{item.status == 1}}" style="font-size: 37rpx; color: green; height: 65rpx;">通过</view>
-          <view wx:if="{{item.status == 2}}" style="font-size: 37rpx; color: red; height: 65rpx;">被领取</view>
-          
-
-          
+          <view wx:if="{{item.status == 2}}" style="font-size: 37rpx; color: red; height: 65rpx;">被领取</view>       
         </view>
+        
 
-        <view style="font-size: 37rpx; height: 130rpx;">原因：{{item.reason}}</view>
+        <view class="rejectReason" wx:if="{{item.reject.length > 0}}" >
+          <view style="font-size: 37rpx; height: 130rpx;">拒绝原因：{{item.reject}}</view>
+        </view>
+        
+
       
       </view>
       
     </view>
   </view>
+
+
+
+<view  style='width:0px;height:0px;overflow:hidden;'>
+  <canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
 </view>
-
-<view>下面是canvas</view>
-<canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
-
-
-
-<navigator url="../add_product/add_product">转移添加页面</navigator>
 
 
 

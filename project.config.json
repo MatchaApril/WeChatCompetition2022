@@ -60,6 +60,10 @@
   },
   "compileType": "miniprogram",
   "srcMiniprogramRoot": "miniprogram/",
+  "minifyWXML": true,
+  "useStaticServer": true,
+  "showES6CompileOption": false,
+  "useCompilerPlugins": false,
   "packOptions": {
     "ignore": [],
     "include": []

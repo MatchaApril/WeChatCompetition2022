@@ -1,3 +1,8 @@
+
+
+
+
+
 <view class="cu-card">
  <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
   bindtap="geturl" data-url="{{item.url}}" data-upname="{{item.up_name}}" data-name="{{item.title}}"
@@ -14,15 +19,22 @@
   <!-- 整体头像加名字 -->
    <view class="cu-item">
    <!-- 头像 -->
-    <view class="cu-avatar round lg" style="background-image:url({{item.up_img}});"></view>
+    
+    <view class="cu-avatar round lg" >
+    <!-- style="background-image:url({{item.up_img}});" -->
+      <open-data type="userAvatarUrl" class="openImg" ></open-data>
+    
+    </view>
 
     <!-- 头像右边部分 -->
     <view class="content flex-sub">
     <!-- 人名字 -->
-     <view class="text-grey">{{item.up_name}}</view>
+     <view class="text-grey">
+      <open-data type="userNickName" ></open-data>
+     </view>
 
      <!-- 左边时间，右边下载次数 -->
-     <view class="text-gray text-sm flex justify-between">
+     <view class="text-gray text-sm flex justify-between" style="margin-left: 10rpx;">
       {{DATE}}
 
       
@@ -96,13 +108,32 @@
 <!-- 上传图片 -->
   <view class="img">
 
-    <!-- 选择图片 -->
-    <view class="anniu">
-      <!-- <button size="mini" type="primary" bindtap="upload_img" >添加图片</button> -->
-      <image src="/images/add.png" style="width:100rpx;height:100rpx;border:1rpx solid silver;" bindtap='upload_img' ></image>
-    </view>
+        <!-- 选择图片 -->
 
-    <image  class="xuanzeImg"  src="{{img}}" bindlongpress="delete" data-id="{{index}}" data-src="{{img}}" ></image>
+        <view class="img_1">
+
+
+          <view style="font-size:30rpx; margin-left: 80rpx;">
+            添加图片
+          </view>
+
+          <view class="pictuer_text">
+            图片仅支持一张
+          </view>
+          <view class="anniu">
+          <!-- <button size="mini" type="primary" bindtap="upload_img" >添加图片</button> -->
+          
+          <image src="/images/add.png" style="width:100rpx;height:100rpx;border:1rpx solid silver;" bindtap='upload_img' ></image>
+
+          <image  class="xuanzeImg"  src="{{img}}" bindlongpress="delete" data-id="{{index}}" data-src="{{img}}" ></image>
+
+        </view>
+
+        
+    </view>
+    
+
+    
     <!-- 删除图片 -->
     <!-- <button size="mini" type="warn" plain="true" bindtap="delete" data-id="{{index}}" data-src="{{img}}">删除图片</button> -->
 

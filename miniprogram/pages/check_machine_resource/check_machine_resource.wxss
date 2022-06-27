@@ -136,9 +136,19 @@
 }
 .listAddProduct{
   /* margin-left: 100rpx; */
-  font-weight: bold;
+  /* 字体颜色 */
+  color: rgb(250,165,0);
+  /* background-color: ; */
+  width: 170rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* font-weight: bold; */
   border-radius: 20rpx;
-  border: 1px solid rgb(0,0,0); 
+  border: 2px solid rgb(250,165,0); 
+  /* margin-left:40rpx */
+  
+  
 }
 
 .catalog .hd .txt {

@@ -104,6 +104,27 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "商品展示",
+          "pathName": "pages/check_machine_resource/check_machine_resource",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "审批页面",
+          "pathName": "pages/check_user_reserve/check_user_reserve",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "乐佳要加bottom的页面",
+          "pathName": "pages/messageDetail/messageDetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -23,6 +23,8 @@ Page({
       // 现在时间
       time: "2022/06/19 ",
       down_num: "2",
+      
+      // bg_color:"118deg,#fdcb6e 7%,#FF6B95 67%,#45D4FB 30%",
       bg_color: "45deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 17%",
     }],
 

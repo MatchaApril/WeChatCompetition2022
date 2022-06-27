@@ -38,7 +38,13 @@ page{
 
 .cu-list.menu-avatar>.cu-item>.cu-avatar {
   position: absolute;
-  left: 30rpx
+  left: 30rpx;
+  overflow: hidden;
+}
+.openImg{
+  height: 100%;
+  width: 100%;
+
 }
 
 
@@ -173,6 +179,7 @@ cu-list+.cu-list {
 }
 
 .text-grey {
+  margin-left: 10rpx;
   color: #8799a3;
 }
 
@@ -258,14 +265,32 @@ cu-list+.cu-list {
 .img{
   display: flex;
   width: 96%;
-  height: 150rpx;
+  height: 280rpx;
   background-color: #fff;
   /* align-self: center; */
   align-items: center;
   justify-content: center;
   border-radius: 20rpx;
-  margin-top: 5rpx;
+  margin-top: 15rpx;
 }
+
+.img_1{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 20rpx; */
+}
+
+.pictuer_text
+{
+  color: #cdcdcd;
+  font-size: 26rpx;
+  margin-bottom: 15rpx;
+  margin-top: 8rpx;
+  margin-left: 80rpx;
+}
+
 
 .anniu{
 
@@ -281,6 +306,7 @@ cu-list+.cu-list {
   width: 100rpx;
   height: 100rpx;
   padding-left: 170rpx;
+  /* margin-bottom: 20rpx; */
 }
 
 
@@ -288,6 +314,7 @@ cu-list+.cu-list {
 
 
 .btn-area{
+  margin-top: 20rpx;
   background-color: #fff;
   width: 100%;
   display: flex;

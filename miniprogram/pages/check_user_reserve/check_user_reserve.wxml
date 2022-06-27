@@ -1,9 +1,10 @@
 <!--pages/check_user_reserve/check_user_reserve.wxml-->
 
-
+<!-- 整个点击后的框框 -->
 <modal hidden="{{hiddenmodalput}}" title="请输入拒绝理由" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{item._id}}">
         <input type='text' placeholder="请输入内容(15字)" auto-focus maxlength="20" bindblur='rejectReason' value="{{noneValue}}" ></input>
 </modal>
+
 <view class="cu-card">
  <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
   bindtap="geturl" data-url="{{item.url}}" data-upname="{{item.up_name}}" data-name="{{item.title}}"

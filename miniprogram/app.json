@@ -3,7 +3,7 @@
     "pages/login/login",
     "pages/check_machine_resource/check_machine_resource",
     "pages/check_user_reserve/check_user_reserve",
-    "pages/machine_resource/machine_resouce",
+    
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -30,7 +30,10 @@
     "pages/add_product/add_product",
     "pages/new_machine/new_machine",
     "pages/userList/userList",
-    "pages/userListDetail/userListDetail"
+    "pages/userListDetail/userListDetail",
+    "pages/order/order",
+    "pages/goods_list/goods_list",
+    "pages/reserve/reserve"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -51,7 +54,7 @@
                 "selectedIconPath": "/images/tabbar/home_on.png"
           },
           {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/goods_list/goods_list",
                 "text": "预约",
 
                 "iconPath": "/images/tabbar/publish.png",

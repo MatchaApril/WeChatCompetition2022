@@ -1,3 +1,8 @@
+
+
+
+
+
 <view class="cu-card">
  <view class="cu-item bg-img shadow-blur" style="background-image: linear-gradient({{item.bg_color}});"
   bindtap="geturl" data-url="{{item.url}}" data-upname="{{item.up_name}}" data-name="{{item.title}}"
@@ -14,16 +19,23 @@
   <!-- 整体头像加名字 -->
    <view class="cu-item">
    <!-- 头像 -->
-    <view class="cu-avatar round lg" style="background-image:url({{item.up_img}});"></view>
+    
+    <view class="cu-avatar round lg" >
+    <!-- style="background-image:url({{item.up_img}});" -->
+      <open-data type="userAvatarUrl" class="openImg" ></open-data>
+    
+    </view>
 
     <!-- 头像右边部分 -->
     <view class="content flex-sub">
     <!-- 人名字 -->
-     <view class="text-grey">{{item.up_name}}</view>
+     <view class="text-grey">
+      <open-data type="userNickName" ></open-data>
+     </view>
 
      <!-- 左边时间，右边下载次数 -->
-     <view class="text-gray text-sm flex justify-between">
-      {{item.time}}
+     <view class="text-gray text-sm flex justify-between" style="margin-left: 10rpx;">
+      {{DATE}}
 
       
       <!-- <view class="text-gray text-sm">
@@ -49,35 +61,35 @@
     <view class="upload">
 
       <view class="upload_1">
-        <view>物品名称：</view>
-        <input placeholder="请输入物品名称" name="name"> </input>
+        <view class="defination">物品名称：</view>
+        <input placeholder="请输入名称" name="name"> </input>
       </view>
 
       <view class="line"></view>
 
       <view class="upload_1">
-        <view>物品数量：</view>
-        <input placeholder="输入物品数量(不小于5)" name="number"> </input>
+        <view class="defination">物品数量：</view>
+        <input placeholder="请输入数量(不小于5)" name="number"> </input>
       </view>
 
       <view class="line"></view>
 
 
-      <view class="upload_1">
-        <view>发放机ID：</view>
-        <input placeholder="要放入的发放机ID" name="machine_id"> </input>
-      </view>
+      <!-- <view class="upload_1">
+        <view class="defination">发放机ID：</view>
+        <input  name="machine_id" value="{{id}}"> </input>
+      </view> -->
 
-      <view class="line"></view>
+      <!-- <view class="line"></view> -->
 
       <view class="upload_1">
-        <view >物品价格：</view>
-        <input placeholder="请输入该物品单价" name="price"> </input>
+        <view class="defination" >物品价格：</view>
+        <input placeholder="请输入物品单价" name="price"> </input>
       </view>
       <view class="line"></view>
 
       <view class="upload_1" style="margin-bottom: 20rpx;">
-        <radio-group name="type" style="padding-top: 10rpx;">
+        <radio-group name="type" style="padding-top: 10rpx;padding-left: 20rpx;">
           <radio value="0">基础医疗物品</radio>
           <radio value="1" style="margin-left: 50rpx;">学生申请物品</radio>
         </radio-group>
@@ -96,12 +108,32 @@
 <!-- 上传图片 -->
   <view class="img">
 
-    <!-- 选择图片 -->
-    <view class="anniu">
-      <button size="mini" type="primary" bindtap="upload_img" >添加图片</button>
-    </view>
+        <!-- 选择图片 -->
 
-    <image src="{{img}}" style="width:100rpx;height:100rpx"></image>
+        <view class="img_1">
+
+
+          <view style="font-size:30rpx; margin-left: 80rpx;">
+            添加图片
+          </view>
+
+          <view class="pictuer_text">
+            图片仅支持一张
+          </view>
+          <view class="anniu">
+          <!-- <button size="mini" type="primary" bindtap="upload_img" >添加图片</button> -->
+          
+          <image src="/images/add.png" style="width:100rpx;height:100rpx;border:1rpx solid silver;" bindtap='upload_img' ></image>
+
+          <image  class="xuanzeImg"  src="{{img}}" bindlongpress="delete" data-id="{{index}}" data-src="{{img}}" ></image>
+
+        </view>
+
+        
+    </view>
+    
+
+    
     <!-- 删除图片 -->
     <!-- <button size="mini" type="warn" plain="true" bindtap="delete" data-id="{{index}}" data-src="{{img}}">删除图片</button> -->
 
@@ -116,14 +148,12 @@
 
 <!-- 提交 重置按钮 -->
 <view class="btn-area">
-  <button style="margin: 30rpx 0" form-type="submit" type="primary" >提交</button>
-  <button  style="margin: 30rpx 0" formType="reset" type="default" data-src="{{img}}" >重置</button>
+  <button class="btn_submin" form-type="submit" type="primary" >提交</button>
+  <button  class="btn_reset"  style="margin: 30rpx 0" formType="reset" type="warn" data-src="{{img}}" >重置</button>
 </view>
 
 </view>
 
 </form>
-
-
 
 

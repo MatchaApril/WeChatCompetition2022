@@ -1,0 +1,351 @@
+/* pages/order1/order1.wxss */
+Page{
+    background-color: rgba(243, 252, 122, 0.301);
+  }
+  
+  .imagesize{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imagesize image{
+    width: 480rpx;
+    height: 480rpx;
+  }
+
+  .cu-card {
+    display: block;
+    overflow: hidden;
+  }
+  
+  .cu-list.menu-avatar {
+    overflow: hidden;
+  }
+  
+  .cu-list.menu-avatar>.cu-item {
+    position: relative;
+    display: flex;
+    padding-right: 10rpx;
+    height: 140rpx;
+    background-color: white;
+    justify-content: flex-end;
+    align-items: center
+  }
+  
+  .cu-card>.cu-item.shadow-blur {
+    overflow: initial;
+  }
+  
+  .bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .cu-list.menu-avatar>.cu-item .content.flex-sub {
+    width: calc(100% - 96rpx - 60rpx - 20rpx);
+  }
+  
+  .cu-list.menu-avatar>.cu-item>.cu-avatar {
+    position: absolute;
+    left: 30rpx
+  }
+  
+  
+  cu-list+.cu-list {
+    margin-top: 30rpx
+  }
+  
+  .cu-list.menu-avatar {
+    overflow: hidden;
+  }
+  
+  .cu-list>.cu-item {
+    transition: all .6s ease-in-out 0s;
+    transform: translateX(0rpx)
+  }
+  
+  
+  .cu-avatar {
+    font-variant: small-caps;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    color: var(--white);
+    white-space: nowrap;
+    position: relative;
+    width: 64rpx;
+    height: 64rpx;
+    background-size: cover;
+    background-position: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+  }
+  
+  .round {
+    border-radius: 5000rpx;
+  }
+  
+  .cu-avatar.lg {
+    width: 108rpx;
+    height: 108rpx;
+    font-size: 2em;
+  }
+  
+  .cu-list.menu-avatar>.cu-item .content {
+    position: absolute;
+    left: 146rpx;
+    width: calc(100% - 96rpx - 60rpx - 120rpx - 20rpx);
+    line-height: 1.6em;
+  }
+  
+  .cu-list.menu-avatar>.cu-item .content.flex-sub {
+    width: calc(100% - 96rpx - 60rpx - 20rpx);
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .cu-card>.cu-item {
+    display: block;
+    background-color: var(--white);
+    overflow: hidden;
+    border-radius: 25rpx;
+    /* height: 450rpx; */
+    margin: 30rpx;
+  }
+  
+  .cardTitle {
+    color:rgb(233, 71, 7);
+    height: 150rpx;
+    
+    padding-top: 70rpx;
+    padding-left: 60rpx;
+    padding-right: 60rpx;
+    /* padding: 90rpx 60rpx; */
+    font-size: 40rpx;
+    font-weight: 450;
+    transform: skew(-10deg, 0deg);
+    position: relative;
+    text-shadow: 0px 0px 6rpx rgba(0, 0, 0, 0.3)
+  }
+  
+  .cardTitle::before {
+    content: "";
+    position: absolute;
+    width: 60rpx;
+    height: 6rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    
+    display: block;
+    top: 60rpx;
+    left: 50rpx;
+    transform: skew(10deg, 0deg);
+  }
+  
+  .cardTitle::after {
+    content: "";
+    position: absolute;
+    width: 140rpx;
+    border-radius: 6rpx;
+    height: 24rpx;
+    background-color: #fff;
+    display: block;
+    bottom: 76rpx;
+    left: 90rpx;
+    transform: skew(10deg, 0deg);
+    opacity: 0.1;
+  }
+  
+  .shadow-blur {
+    position: relative;
+  }
+  
+  .shadow-blur::before {
+    content: "";
+    display: block;
+    background: inherit;
+    filter: blur(10rpx);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10rpx;
+    left: 10rpx;
+    z-index: -1;
+    opacity: 0.4;
+    transform-origin: 0 0;
+    border-radius: inherit;
+    transform: scale(1, 1);
+  }
+  
+  .text-grey {
+    color: #8799a3;
+  }
+  
+  .text-sm {
+    font-size: 24rpx;
+  }
+  
+  .text-gray {
+    color: #aaaaaa;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .viewParent{
+    position: relative;
+    z-index: 1;
+    
+    /* margin-top: 5rpx; */
+    height: 100rpx;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 60rpx;
+  }
+  .view1{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 210rpx;
+  }
+  
+  .shenpi{
+    position: absolute;
+    z-index: 3;
+    width: 90%;
+    height: 160rpx;
+    border-radius: 40rpx;
+    
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20rpx;
+    
+    
+  }
+  .daishenpi{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    width: 40%;
+    font-size: 32rpx;
+    font-size: x-large;
+  }
+  
+  .nums_approving{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-content: center;
+    color: rgb(24, 23, 23);
+  }
+  
+  
+  
+  .yishenpi{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+    width: 40%;
+    font-size: 32rpx;
+    font-size: x-large;
+  }
+  .nums_approved{
+    color:rgb(24, 23, 23);
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-content: center;
+  }
+  
+  
+  
+  
+  .xuanze_1{
+    width: 100%;
+    display: flex;   
+  
+    justify-content: center;   
+    
+    align-items: center; 
+  }
+  .xuanze_2{
+    
+  }
+  
+  .approving{
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgb(255,255,255);
+    margin-right: 5%;
+    border-radius: 20rpx;
+    margin-bottom: 40rpx;
+  
+  }
+  .title{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    font-size: 45rpx;
+    font-weight: bolder;
+    height:100rpx;
+  }
+  
+  .shenqingNote{
+    margin-left: 30rpx;
+  }
+  
+  .zhuangtai{
+    display: flex;
+    flex-direction: row;
+  }
+  .YesNo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-bottom: 30rpx;
+  }
+  
+  
+  .line1{
+    margin-left: 10%;
+    width: 80%;
+    height: 5rpx;
+    background-color: rgb(200,200,200);
+    margin-bottom: 10rpx;
+  }
+  
+  
+  .canvas {
+    margin: 40rpx auto;
+  }

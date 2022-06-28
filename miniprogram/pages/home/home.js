@@ -18,7 +18,7 @@ Page({
       iconpath: '/images/查看病例.png',
       classifier: "Reserve",
       color: "orange",
-      url:  "/pages/message/message",
+      url:  "/pages/reserve/reserve",
     },
     {
       name: '资讯/安全知识',

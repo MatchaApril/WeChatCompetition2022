@@ -1,5 +1,6 @@
 // pages/add_product/add_product.js
 const db = wx.cloud.database()
+const util = require('../../utils/utils.js')
 Page({
 
   /**
@@ -16,7 +17,9 @@ Page({
     }],
     fenlei:[],
     img:'',
-    color: ''
+    color: '',
+    DATE:"",
+    id:""
   },
   // 上传图片
   upload_img:function(){
@@ -51,39 +54,55 @@ Page({
       }
     })
   },
-  // delete: function (e) {
-  //   let that = this
-  //   console.log(that.data.img)
-  //   console.log(e.currentTarget.dataset.id)
-  //   var id = e.currentTarget.dataset.id;
-  //   var img= that.data.img;
-  //   // img.splice(id,1)
-  //   that.setData({
-  //     img: ''
-  //   })
-  //   console.log("e.currentTarget.dataset.src",e.currentTarget.dataset.src)
-  //   wx.cloud.deleteFile({
-      
-  //     fileList: [e.currentTarget.dataset.src],
-  //     success: res => {
-  //       // handle success
-  //       console.log(res.fileList)
-  //     },
-  //     fail: err => {
-  //       console.log("add_product行错误")
-  //     },
-  //   })
-  //   console.log(that.data.img)
-  // },
+  delete: function (e) {
+    let that = this
+    console.log(that.data.img)
+    console.log(e.currentTarget.dataset.id)
+    var id = e.currentTarget.dataset.id;
+    var img= that.data.img;
+    // img.splice(id,1)
+
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      success: function (res) {
+        if (res.confirm) {
+          that.setData({
+            img: ''
+          })
+          console.log("e.currentTarget.dataset.src",e.currentTarget.dataset.src)
+          wx.cloud.deleteFile({
+            
+            fileList: [e.currentTarget.dataset.src],
+            success: res => {
+              // handle success
+              console.log(res.fileList)
+            },
+            fail: err => {
+              console.log("add_product行错误")
+            },
+          })
+          console.log(that.data.img)
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+      }
+    })
+
+    
+  },
+
   submit:function(e){
     let that = this
+    // &&e.detail.value.machine_id!==""
     console.log(e)
-    if(e.detail.value.name!==""&&e.detail.value.number!==""&&e.detail.value.machine_id!==""&&e.detail.value.detail!==""&&that.data.img.length!==0 && e.detail.value.type!=="" && e.detail.value.price !==""){
+    if(e.detail.value.name!==""&&e.detail.value.number!==""&&e.detail.value.detail!==""&&that.data.img.length!==0 && e.detail.value.type!=="" && e.detail.value.price !==""){
       db.collection('machine_resource').add({
         data:{
           name:e.detail.value.name,
           number:e.detail.value.number - '0',
-          machine_id:e.detail.value.machine_id - '0',
+          machine_id:that.data.id - '0',
           detail:e.detail.value.detail,
           image:that.data.img,
           type:parseInt(e.detail.value.type),
@@ -123,6 +142,11 @@ Page({
         // handle success
         that.setData({
           img: ''
+        },()=>{
+          wx.showToast({
+            title: '重置成功',
+          })
+          
         })
         console.log(res.fileList)
       },
@@ -144,6 +168,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log(options)
+    this.setData({
+      id:options.id
+    })
     value:''
   },
 
@@ -158,7 +186,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    var DATE = util.formatTime(new Date());
+    this.setData({
+      DATE:DATE.split(" ")[0]
+    })
   },
 
   /**

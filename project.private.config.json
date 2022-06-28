@@ -16,7 +16,8 @@
         {
           "name": "db guide",
           "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+          "query": "",
+          "scene": null
         },
         {
           "name": "pages/index/index",
@@ -82,6 +83,62 @@
           "name": "pages/userListDetail/userListDetail",
           "pathName": "pages/userListDetail/userListDetail",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "LOGIN",
+          "pathName": "pages/login/login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "添加物品",
+          "pathName": "pages/add_product/add_product",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商品展示",
+          "pathName": "pages/check_machine_resource/check_machine_resource",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "HOME",
+          "pathName": "pages/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "乐佳的发布咨询页面",
+          "pathName": "pages/messageCreate/messageCreate",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商品展示",
+          "pathName": "pages/check_machine_resource/check_machine_resource",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "审批页面",
+          "pathName": "pages/check_user_reserve/check_user_reserve",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "乐佳要加bottom的页面",
+          "pathName": "pages/messageDetail/messageDetail",
+          "query": "",
+          "launchMode": "default",
           "scene": null
         }
       ]

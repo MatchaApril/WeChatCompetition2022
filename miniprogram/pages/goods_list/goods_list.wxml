@@ -1,0 +1,110 @@
+
+<view class="container">
+
+<view class="catalog">
+
+  <modal hidden="{{hiddenmodalput}}" title="请确认预定信息" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{idx}}">
+    <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <text class="key">申请人：</text>
+              </view>
+            <view class="weui-cell__bd">{{user.name}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <text class="key">药品名称：</text>
+              </view>
+            <view class="weui-cell__bd">{{product[index].name}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <text class="key">用药原因:</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" bindinput="Reason" name="reason" bindblur="getTitle" placeholder="请输入申请药品原因"/>
+            </view>
+    </view>
+
+  </modal>
+
+<!-- 左边部分 -->
+  <scroll-view class="nav" scroll-y="true">
+        <view class="item" style="font-weight: bold;">发放机</view>
+        <view class="item {{ currentNum == idx ? 'active' : ''}}" wx:for="{{number}}"   wx:for-index="idx"  bindtap="switchCate" data-num="{{idx}}">{{product_abbre[idx]}}
+        
+        <view class="line_1"></view>
+        
+        </view>
+    </scroll-view>
+
+
+
+    <scroll-view class="cate" scroll-y="true">
+    <!-- 右上角 -->
+    <swiper indicator-dots="false" 
+        autoplay="{{true}}" 
+        interval="4000" 
+        indicator-dots="{{false}}" 
+        indicator-color='#8a8a8a' 
+        indicator-active-color='#333' 
+        circular="true" 
+        class="swiper-block" 
+        bindchange="swiperChange" 
+        previous-margin="0rpx" 
+        next-margin="0rpx" 
+        current="{{0}}">
+  <block wx:for="{{imgUrls}}" wx:index="{{index}}" wx:key="{{index}}">
+    <swiper-item class="swiper-item ">
+      <image mode="aspectFill" src="{{item}}" class="slide-image {{currentIndex == index ? 'active' : 'common'}}" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="top">
+  <view class="t-top">温馨提示：用于非申请处方药品哦！</view>
+</view>
+
+    <view class="hd">
+            <text class="line"></text>
+            <text class="txt">列表</text>
+            <text class="line"></text>
+        </view>
+
+
+<!-- 右下角 -->
+      <!-- <view class="fafangji"> -->
+        <view class="bd">
+        <!-- <view class="aFafangji" wx:for="{{number}}" wx:for-index="idx">
+          <navigator  class="nvgt" style="width: 100%; height: 100%;" url="../machine_resource/machine_resouce?id={{idx}}">
+            <image class="imagefafang"   src="{{product_image[idx]}}"></image>
+              <view class="faXiangqing" >
+                <view class="location">{{product_location[idx]}}</view>
+                <view class="threshold"></view>
+              </view>
+          </navigator>
+        </view> -->
+        <view class="product1">
+        <view class="product2" wx:for="{{product}}" wx:for-index="index" data-index="{{index}}" wx:key="_id" wx:if="{{number>0}}">
+          <image src="{{item.image}}" class="img"></image>
+          <view class="product3">
+              <view class="product3_1">
+                <view style="font-family:宋体; font-size: 32rpx; font-weight:bold;">{{item.name}}</view>
+                <text style="font-size:30rpx;  font-style:italic;">价格:￥{{item.price}}</text>
+              </view>
+
+              <view class="product3_2">
+
+                <view bindtap="reserve" data-id="{{item._id}}" data-index="{{index}}" class='btn' style="background-color:lightcoral;font-weight: bold; color: white;"  hover-stay-time="3000">
+                    <image class="catalog .bd .product1 .product3 .product3_2 .btn.img" src="{{url}}"></image>
+                    <view class="catalog .bd .product1 .product3 .product3_2 .btn.txt">预定</view>
+                </view>                   
+              </view>
+          </view>
+        </view>
+</view>
+    </view>
+    </scroll-view>
+  </view>
+</view>

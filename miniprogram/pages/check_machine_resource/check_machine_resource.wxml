@@ -5,7 +5,7 @@
 
 
   <modal hidden="{{hiddenmodalput}}" title="增加商品数量" confirm-text="增加" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-id="{{idx}}">
-              <input type='text' placeholder="请输入数量(不小于5)" auto-focus maxlength="2" bindblur='addNum'>
+              <input type='text' placeholder="请输入数量(不小于5)" auto-focus maxlength="2" bindblur='addNum' value="{{noneValue}}" >
               </input>
   </modal>
 <!-- 左边部分 -->
@@ -22,15 +22,39 @@
 
     <scroll-view class="cate" scroll-y="true">
     <!-- 右上角 -->
-    <navigator url="url" class="banner">
+    <!-- <navigator url="url" class="banner">
             <image class="image" src="cloud://cloud1-9gcef6nu6fc89a19.636c-cloud1-9gcef6nu6fc89a19-1311107941/医用物品img/发放机1.png"></image>
             <view class="txt">发放机</view>
-    </navigator>
+    </navigator> -->
+    <!-- <custom-swiper   imgUrls="{{carouselImgUrls}}" />  -->
+    <swiper indicator-dots="false" 
+        autoplay="{{true}}" 
+        interval="4000" 
+        indicator-dots="{{false}}" 
+        indicator-color='#8a8a8a' 
+        indicator-active-color='#333' 
+        circular="true" 
+        class="swiper-block" 
+        bindchange="swiperChange" 
+        previous-margin="0rpx" 
+        next-margin="0rpx" 
+        current="{{0}}">
+    <block wx:for="{{carouselImgUrls}}" wx:index="{{index}}" wx:key="{{index}}">
+      <swiper-item class="swiper-item ">
+        <image mode="aspectFill" src="{{item}}" class="slide-image {{currentIndex == index ? 'active1' : 'common'}}" />
+      </swiper-item>
+    </block>
+  </swiper>
 
     <view class="hd">
             <text class="line"></text>
             <text class="txt">列表</text>
             <text class="line"></text>
+            <navigator   class="nav_add"  style="margin-left: 50rpx;"   url="../add_product/add_product?id={{currentNum}}">
+              <view class="listAddProduct" >添加物品
+              
+              </view>
+            </navigator>
         </view>
 
 
@@ -98,5 +122,3 @@
   </view>
 </view>
 
-
-<navigator url="../add_product/add_product">转移添加页面</navigator>

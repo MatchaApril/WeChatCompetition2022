@@ -1,20 +1,26 @@
 // pages/check_machine_resource/check_machine_resource.js
+const app=getApp()
 const db = wx.cloud.database()
 const _ = db.command
-
-
-
+const util=require('../../utils/utils.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    carouselImgUrls:[
-      "/images/校园5.png",
-      "/images/校园6.png",
-      "/images/校园7.png",
+
+    currentIndex:0,
+    user:"",
+    reason:"",
+
+    imgUrls:[
+      "/images/校园11.jpg",
+      "/images/校园12.jpg",
+      "/images/校园13.jpg",
     ],
+
+    url:"/images/yes1.png",
     // 访问物资数据库，用一个列表分别保存所有物资数量，另一个列表保存所有阈值
     // [[xxx],[x]]
     // [[xxx],[x]]
@@ -36,20 +42,12 @@ Page({
     hiddenmodalput:true,
     add:0,
     nowAdd:"",
-    currentIndex: 0,
-    noneValue:""
-
+    index:-1,
   },
-  
 
   /**
    * 生命周期函数--监听页面加载
    */
-  swiperChange(e) {
-    this.setData({
-      currentIndex: e.detail.current
-    });
-  },
   onLoad() {
     let that = this
     var tempNum = that.data.currentNum
@@ -103,6 +101,30 @@ Page({
     })
 
     
+            this.setData({
+                  userinfo: app.userinfo
+            })
+            console.log(app.userinfo)
+            wx.getStorage({
+              key: 'openid',
+              success(res) {
+                  that.setData({
+                      openid:res.data,
+                  },()=>{
+                        that.getUserInformation();
+                  })
+                  console.log(that.data.openid)
+                 }
+            })
+            that.setData({
+                _openid:that.data.openid,
+
+            },()=>{
+              console.log("这就是openid",that.data._openid)
+            }
+            )
+
+
   },
 
   /**
@@ -215,99 +237,110 @@ Page({
     )
   },
 
-  cancel: function(){
-    let that = this
-    wx.showToast({
-      title: '取消成功',//提示文字
-      duration:1100,//显示时长
-      mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
-      icon:'success', //图标，支持"success"、"loading"  
-      success:function(){ 
-        that.setData({
-  
-          hiddenmodalput: true
-       
-         });
-      },//接口调用成功
-      fail: function () { console.log("369行有问题")},  //接口调用失败的回调函数  
-      complete: function () { } //接口调用结束的回调函数  
-   })
-   
-  
-   },
 
-   confirm:function(e) {
-     console.log("eeeeeeeeeeeeeeeeeeeee",e)
-    let that = this
+    swiperChange(e) {
+      this.setData({
+        currentIndex: e.detail.current
+      });
+    },
 
-    that.setData({
-      hiddenmodalput: true
-    },()=>{
-      db.collection("machine_resource").doc(that.data.nowAdd).update({
-        data:{
-          number:_.inc(that.data.add),
-          deficiency:0
-        },success:res=>{
-          wx.showToast({
-            title: '添加成功',//提示文字
-            duration:1100,//显示时长
-            mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
-            icon:'success', //图标，支持"success"、"loading"  
-            success:function(){ 
-              that.onShow()
-            },//接口调用成功
-            fail: function () { console.log("260行有问题")},  //接口调用失败的回调函数  
-            complete: function () { } //接口调用结束的回调函数  
-         })
-        },fail:res=>{
-          console.log("247有问题")
-        }
-        // },success:res=>{
-        //   console.log("自增成功")
-        //   wx.showToast({
-        //     title: '添加成功',//提示文字
-        //     duration:1000,//显示时长
-        //     mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
-        //     icon:'success', //图标，支持"success"、"loading"  
-        //     success:function(){ that.onShow()},//接口调用成功
-        //     fail: function () { console.log("自增有问题")},  //接口调用失败的回调函数  
-        //     complete: function () { } //接口调用结束的回调函数  
-        //  })
-  
-  
-          
-        // },fail:res=>{
-        //   console.log("自增失败")
-        // }
-      })    
-
-
-     
-
-
-      
-    }
-    )
-  },
-
-  addNum:function(e){
-    console.log("input失去焦点的输出内容是什么呢？？？？",e)
-    this.setData({
-      add: e.detail.value - '0'
-      })
-  },
-
-
-  addProduct:function(e) {
+  reserve:function(e) {
     console.log("这个e应该没问题吧,",e.currentTarget.dataset.id)
+    console.log("product",this.data.product)
     let that = this
     that.setData({
       hiddenmodalput: !that.data.hiddenmodalput,
       nowAdd:e.currentTarget.dataset.id,
-      noneValue:""
+      index:e.currentTarget.dataset.index,
+      
     })
+    console.log("index",that.data.index)
+  },
 
+  getUserInformation: function (){
+    let that = this;
+    that.data.openid
+    db.collection('user').where({
+          _openid: this.data.openid
+   }).get({
+     success: (res) => {
+       console.log(res.data[0])
+       this.setData({
+          userInformation:res.data[0],
+          user:res.data[0]
+         })
+     }
+   })
+},
 
+Reason:function(e){
+    console.log("reason",e.detail)
     
+    this.setData({
+      reason:e.detail.value,
+    })
+},
+
+confirm:function(e) {
+  var DATE = util.formatTime(new Date());
+
+  let that = this
+  that.setData({
+    hiddenmodalput: true,
+    index:that.data.index
+  },()=>{
+    console.log("reason",that.data.reason)
+    wx.showToast({
+      title: '预定成功',//提示文字
+      duration:1100,//显示时长
+      mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
+      icon:'success', //图标，支持"success"、"loading"  
+      success:function(){ 
+        db.collection("user_reserve")
+        .add({
+          data:{
+            student_number:that.data.user.student_number,
+            name:that.data.user.name,
+            machine_id:that.data.currentNum,
+            reserve_name:that.data.product[that.data.index].name,
+            is_approve: 0,
+            time_apply: DATE,
+            reason:that.data.reason,
+            title:that.data.product[that.data.index].name,
+          },success:function(res){
+            that.onLoad()
+          },fail:res=>{
+            console.log("当前点击拒绝申请失败咯")
+          }
+        })
+        db.collection("user_reserve").doc(that.data.nowAdd)
+        .update({
+          data:{
+            number:that.data.product[that.data.index].number-1
+          }                
+      },//接口调用成功
+   )
   }
+})
+  })
+},
+
+  
+cancel: function(){
+  let that = this
+  wx.showToast({
+    title: '取消成功',//提示文字
+    duration:1100,//显示时长
+    mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
+    icon:'success', //图标，支持"success"、"loading"  
+    success:function(){ 
+      that.setData({
+        hiddenmodalput: true
+       });
+    },//接口调用成功
+    fail: function () { console.log("369行有问题")},  //接口调用失败的回调函数  
+    complete: function () { } //接口调用结束的回调函数  
+ })
+ },
+
 })

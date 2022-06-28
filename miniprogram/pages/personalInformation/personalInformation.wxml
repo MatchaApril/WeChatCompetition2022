@@ -25,4 +25,16 @@
                   <view>电话：{{userInformation.tel}}</view>
             </view>
       </view>
+      <view class="bottom_card" >
+            <view class="bottom_1">
+                  <image src="/images/活动.png"></image>
+                  <view>学校：{{userInformation.school}}</view>
+            </view>
+      </view>
+      <view class="bottom_card" >
+            <view class="bottom_1">
+                  <image src="/images/标签.png"></image>
+                  <view>学号：{{userInformation.num}}</view>
+            </view>
+      </view>
 </view>

@@ -48,16 +48,18 @@ page {
   padding: 20rpx;
   box-sizing: border-box;
   margin-top: 10rpx;
+  margin-left: 20rpx;
 }
 .list_word {
   display: flex;
+  margin-top: 30rpx;
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
 }
 .list_poster {
-  width: 260rpx;
-  height: 230rpx;
+  width: 170rpx;
+  height: 170rpx;
 }
 .list_content {
   height: 230rpx;

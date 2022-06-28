@@ -11,6 +11,12 @@
             <view class="contact">
                   <input bindinput="wxInput" auto-focus type="number" name="tel" value='{{tel}}' maxlength="30" placeholder-class="pache" placeholder="输入您的电话号" />
             </view>
+            <view class="contact">
+                  <input bindinput="wxInput" auto-focus  name="school" value='{{school}}' maxlength="30" placeholder-class="pache" placeholder="输入您的学校" />
+            </view>
+            <view class="contact">
+                  <input bindinput="wxInput" auto-focus type="number" name="num" value='{{num}}' maxlength="30" placeholder-class="pache" placeholder="输入您的学号" />
+            </view>
       </view>
       <!--底部确认-->
       <button class="confirm" form-type="submit">确定</button>

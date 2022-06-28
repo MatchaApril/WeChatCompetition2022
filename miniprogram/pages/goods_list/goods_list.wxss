@@ -122,7 +122,7 @@
 }
 
 .catalog .hd {
-  height: 30rpx;
+  height: 50rpx;
   width: 100%;
   display: flex;
   justify-content: center;

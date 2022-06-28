@@ -11,7 +11,7 @@ Page({
     console.log(e.detail.value);
     //表单数据
     var objData = e.detail.value;
-    if (objData.name && objData.tel && objData.tel.length==11) {
+    if (objData.name && objData.tel && objData.num && objData.school && objData.tel.length==11) {
       //获取openid
       this.setData({
         openid: wx.getStorageSync('openid')
@@ -24,7 +24,9 @@ Page({
         data: {
           name: objData.name,
           tel: objData.tel,
-          is_complete:1
+          is_complete:1,
+          school:objData.school,
+          num:objData.num
         }
       })
       //跳转
@@ -33,7 +35,7 @@ Page({
       })
     }
     //电话号码不是11位
-    else if(objData.name && objData.tel &&objData.tel.length!=11) {
+    else if(objData.name && objData.tel && objData.num && objData.school && objData.tel.length!=11) {
       wx.showToast({
         title: '请输入11位电话号',
         duration:2000,

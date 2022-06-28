@@ -7,7 +7,7 @@
 
 <view class='head_view2'>
  <view class="text_view2">
-    <textarea placeholder="请填写内容 (不能为空)" auto-focus maxlength="250" auto-focus="{{false}}" bindinput="getInput2"/>
+    <textarea placeholder="请填写内容 (不能为空)" auto-focus maxlength="1000" auto-focus="{{false}}" bindinput="getInput2"/>
     <!-- bindinput是通过getInput2函数获取输入的值， -->
   </view>
 </view>

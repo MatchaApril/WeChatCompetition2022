@@ -80,11 +80,11 @@ Page({
     // })
     // 未审批的
     db.collection("user_reserve").where({
-         _openid:that.data.openid,
+         _openid:that.data._openid,
         is_approve:0
     }).get({
       success:res=>{
-        console.log("openid",res.data.openid)
+        console.log("_openid",res.data._openid)
         that.setData({
           user_reserve_approving:res.data,
           nums_approving:res.data.length,
@@ -96,7 +96,7 @@ Page({
     // 审批完成的
     // 但是审批完成还包括两种：一种是学生没来取的，一种是学生已经取了。
     db.collection("user_reserve").where({
-         _openid:that.data.openid,
+         _openid:that.data._openid,
         is_approve:1
     }).get({
       success:res=>{
@@ -175,6 +175,7 @@ Page({
     
     // 未审批的
     db.collection("user_reserve").where({
+      _openid:that.data._openid,
       is_approve:0
     }).get({
       success:res=>{
@@ -184,6 +185,7 @@ Page({
           nums_approving:res.data.length,
         },()=>{
           db.collection("user_reserve").where({
+            _openid:that.data._openid,
             is_approve:1
           }).get({
             success:res=>{

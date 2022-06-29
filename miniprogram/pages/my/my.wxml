@@ -20,7 +20,7 @@
             <image src="/images/publish.png"></image>
             <view>个人信息</view>
       </view>
-      <view class="center_1" bindtap="go" data-go="/pages/help/help">
+      <view class="center_1" bindtap="go" data-go="../feedback_his/feedback_his">
             <image src="/images/help.png"></image>
             <view>我的意见</view>
       </view>

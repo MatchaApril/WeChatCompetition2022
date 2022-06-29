@@ -34,7 +34,7 @@ Page({
       color: "red",
       iconpath: '/images/公司公告.png',
       classifier: "Comment",
-      url: "/pages/message/message",
+      url: "/pages/feedback_sub/feedback_sub",
     },
     {
       name: '个人信息',

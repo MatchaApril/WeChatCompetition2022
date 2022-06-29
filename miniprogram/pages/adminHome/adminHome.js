@@ -25,7 +25,7 @@ Page({
       {
         icon: "/images/意见反馈.png",
         name: "处理意见",
-        url: "/pages/messageCreate/messageCreate"
+        url: "/pages/feedback_handle/feedback_handle"
       },
       {
         icon: "/images/纱布.png",
@@ -40,7 +40,7 @@ Page({
       {
         icon: "/images/信息管理.png",
         name: "----数据管理----意见信息",
-        url: "/pages/messageCreate/messageCreate"
+        url: "/pages/feedback_adm/feedback_adm"
       },
       {
         icon: "/images/个人信息1.png",

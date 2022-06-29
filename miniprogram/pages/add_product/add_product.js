@@ -96,8 +96,9 @@ Page({
   submit:function(e){
     let that = this
     // &&e.detail.value.machine_id!==""
+    // && e.detail.value.price !==""
     console.log(e)
-    if(e.detail.value.name!==""&&e.detail.value.number!==""&&e.detail.value.detail!==""&&that.data.img.length!==0 && e.detail.value.type!=="" && e.detail.value.price !==""){
+    if(e.detail.value.name!==""&&e.detail.value.number!==""&&e.detail.value.detail!==""&&that.data.img.length!==0 && e.detail.value.type!=="" ){
       db.collection('machine_resource').add({
         data:{
           name:e.detail.value.name,
@@ -108,7 +109,7 @@ Page({
           type:parseInt(e.detail.value.type),
           deficiency:0,
           threshold:5,
-          price:e.detail.value.price - '0'
+          // price:e.detail.value.price - '0'
         },success:function(res){
           wx.showToast({
             title: '提交成功',

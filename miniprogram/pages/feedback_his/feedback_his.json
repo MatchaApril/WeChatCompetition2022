@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "意见反馈历史",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

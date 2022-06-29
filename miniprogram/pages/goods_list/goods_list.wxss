@@ -19,7 +19,7 @@
 
 .catalog .nav {
   padding-left: 3rpx;
-  width: 162rpx;
+  width: 180rpx;
   height: 100%;
 }
 
@@ -127,6 +127,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20rpx;
 }
 
 .catalog .hd .txt {
@@ -336,10 +337,11 @@
   align-items: flex-start;
   overflow: unset;
   width: 550rpx;
-  height: 450rpx;
+  height: 300rpx;
   padding-top: 70rpx;
-  padding-bottom: 20rpx;
+  padding-bottom: 10rpx;
   box-sizing: border-box;
+  /* margin-left: 60rpx; */
 }
 /* 修改图片高宽 */
 .slide-image{
@@ -349,6 +351,7 @@
   margin: 0rpx 50rpx ;
   z-index: 1;
   box-shadow: 10rpx 5px 40rpx rgba(0, 0, 0,0.5);
+  /* margin-left: 45rpx; */
 }
 .active{
   transform: scale(1.3);

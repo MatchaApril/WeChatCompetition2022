@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "Upimg":"/components/Upimg/Upimg",
+    "Tabs":"/components/tabs/tabs"
+  },
+  
+  "navigationBarTitleText": "管理员查看所有意见反馈情况",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

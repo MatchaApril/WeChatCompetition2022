@@ -1,0 +1,37 @@
+
+<view wx:for="{{allData}}" wx:for-item="item1">
+<view class="fb_main" wx:if="{{item1.isHandle==false}}"> <!--显示未处理的意见-->
+      <view class="fb_tips" > 
+        <view>第{{index+1}}个意见</view> 
+        <view>{{item1.typeName}}</view>
+        <view class="fb_title1">未处理</view>
+      </view>
+      
+     <button type="primary" bindtap="handlefeedback" data-index="{{index}}">
+             <icon type="success_no_circle" size="10" color="white">
+             </icon>
+             处理
+      </button>
+   
+     
+    <view class="fb_content">
+        <!--文字-->
+        <textarea value="{{item1.textVal}}" maxlength="200"> </textarea>
+
+        <view class="fb_tool">        
+            <view  wx:for="{{item1.chooseImgs}}" 
+            wx:key="*this" 
+            wx:for-index="childindex"
+            data-index="{{index}}" 
+            wx:for-item="item2"> 
+            <image  class="img_new" src="{{item2}}" bindtap="PreviewImage"  data-parent='{{index}}' data-child="{{childindex}}"  ></image>
+               <!-- <Upimg src="{{item2}}" ></Upimg>-->
+            </view>
+        </view>
+
+     </view>
+ 
+ </view>
+
+
+</view>

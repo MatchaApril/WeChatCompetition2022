@@ -62,9 +62,9 @@
   </block>
 </swiper>
 
-<view class="top">
+<!-- <view class="top">
   <view class="t-top">温馨提示：用于申请非处方药品哦！</view>
-</view>
+</view> -->
 
     <view class="hd">
             <text class="line"></text>

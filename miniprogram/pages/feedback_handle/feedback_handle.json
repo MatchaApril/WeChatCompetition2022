@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "管理员处理未处理的意见",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+
+}

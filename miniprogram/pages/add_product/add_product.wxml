@@ -82,11 +82,11 @@
 
       <!-- <view class="line"></view> -->
 
-      <view class="upload_1">
+      <!-- <view class="upload_1">
         <view class="defination" >物品价格：</view>
         <input placeholder="请输入物品单价" name="price"> </input>
       </view>
-      <view class="line"></view>
+      <view class="line"></view> -->
 
       <view class="upload_1" style="margin-bottom: 20rpx;">
         <radio-group name="type" style="padding-top: 10rpx;padding-left: 20rpx;">
